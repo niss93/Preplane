@@ -1,6 +1,10 @@
 # Preplane
+ALWAYS READ THIS BEFORE  DO ANYTHING
+PUT HERE NEW AND IMPORTANT STUFF YOU DID
 
-there is the readme file
+
+
+ADD of 01/02/2016 :
 
 ###########|SERVER|##############
 Doc for server TEAM :
