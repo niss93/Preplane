@@ -32,4 +32,6 @@ http://www.w3schools.com/website/default.asp
 ###########|LINK|##############
 Doc for LINK TEAM
 
+https://jersey.java.net/documentation/latest/getting-started.html
+
 ##############################
