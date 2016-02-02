@@ -21,7 +21,10 @@ http://bmoussaud.developpez.com/tutoriel/java/jdo/
 
 
 ###########|DISPLAY|##############
-Doc for Display TEAM
+Doc for Display TEAM :
+
+http://www.w3schools.com/
+http://www.w3schools.com/website/default.asp
 
 ##############################
 
