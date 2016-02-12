@@ -22,3 +22,4 @@ public class Airport {
 		this.city = city;
 	}
 }
+
