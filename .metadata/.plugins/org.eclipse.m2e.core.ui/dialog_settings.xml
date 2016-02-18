@@ -2,11 +2,13 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="eidd"/>
 			<item value="EIDD"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="data"/>
 			<item value="Preplane"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -39,6 +41,20 @@
 		<item value="39" key="y"/>
 		<item value="581" key="height"/>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/home/atik/Downloads/samples-jdo-master/tutorial"/>
+			<item value="/home/atik/Downloads/datanucleus-master"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -51,6 +67,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/home/atik/Desktop/preplane/Preplane"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

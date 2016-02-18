@@ -20,7 +20,6 @@ public class ExampleResource {
 	public ExampleClass getExample() {
 		ExampleClass instance = new ExampleClass();
 		instance.field = "Test";
-
 		return instance;
 	}
 

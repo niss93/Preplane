@@ -11,7 +11,7 @@ public interface AirportDao {
 	 * @param idAirport
 	 * @return
 	 */
-	List<Airport> getAirport (String idAirport);
+	Airport getAirport (String idAirport);
 	/** Get the airport using the country
 	 * 
 	 * @param country
