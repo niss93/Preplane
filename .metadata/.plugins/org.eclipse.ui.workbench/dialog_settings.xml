@@ -5,15 +5,19 @@
 		<item value="10" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="-1" key="dialogHeight"/>
-		<item value="-1" key="dialogWidth"/>
+		<item value="244" key="dialogHeight"/>
+		<item value="344" key="dialogWidth"/>
 		<list key="textEntries">
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
+			<item value="org.eclipse.jdt.ui.CompilationUnitEditorPreplane/src/main/java/UserDao.java"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.editors"/>
 		</list>
 		<list key="textArray">
+			<item value="userdao"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">

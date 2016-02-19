@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=Preplane/src\/main\/java&lt;{UserDao.java[UserDao" modifiers="513" timestamp="1455792247000"/>
+<typeInfo handle="=Preplane/src\/main\/java&lt;{FlightDao.java[FlightDao" modifiers="513" timestamp="1455793124000"/>
+<typeInfo handle="=Preplane/\/usr\/lib\/jvm\/java-8-openjdk-i386\/jre\/lib\/rt.jar&lt;javax.print(FlavorException.class[FlavorException" modifiers="1537" timestamp="1445465849000"/>
+</typeInfoHistroy>

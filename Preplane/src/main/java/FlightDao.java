@@ -24,19 +24,19 @@ public interface FlightDao {
 	 * @param com_number
 	 * @return
 	 */
-	List<Flight> getFlightCom(String com_number);
+	Flight getFlightCom(String com_number);
 	/**
 	 *Get list of flight according to the following atc
 	 * @param atc
 	 * @return
 	 */
-	List<Flight> getFlightAtc(String atc);
+	Flight getFlightAtc(String atc);
 	/**
 	 * Get list of flight according to the following notam
 	 * @param notam
 	 * @return
 	 */
-	List<Flight> getFlightNotam(String notam);
+	Flight getFlightNotam(String notam);
 	/**
 	 * Get list of flight according to the following status
 	 * @param status
