@@ -1,3 +1,4 @@
+package preplane;
 
 public class User {
     private int id;

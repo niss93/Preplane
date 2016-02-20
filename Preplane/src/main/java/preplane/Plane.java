@@ -1,3 +1,4 @@
+package preplane;
 public class Plane {
 	private int idPlane;
 	private String planeModel;

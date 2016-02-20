@@ -1,5 +1,4 @@
-package Communication.jetty_jersey;
-
+package preplane;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -26,7 +25,7 @@ public class JettyMain {
 
 		// Configure Jersey
 		ResourceConfig rc = new ResourceConfig();
-		rc.packages(true, "com.example.jetty_jersey.ws");
+		rc.packages(true, "preplane");
 		rc.register(JacksonFeature.class);
 		rc.register(LoggingFilter.class);
 

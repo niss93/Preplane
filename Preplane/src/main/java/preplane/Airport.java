@@ -1,8 +1,15 @@
+package preplane;
 public class Airport {
 	private int idAirport;
     private String country;
     private String city;
     
+    public Airport(int id,String country,String city){
+    	this.idAirport=id;
+    	this.country=country;
+    	this.city=city;
+    	
+    }
 	public int getIdAirport() {
 		return idAirport;
 	}

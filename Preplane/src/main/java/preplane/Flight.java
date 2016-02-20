@@ -1,3 +1,4 @@
+package preplane;
 import java.util.Date;
 	
 public class Flight {
@@ -8,8 +9,19 @@ public class Flight {
     private String commercialNumber;
     private String atcNumber;
     private String notamNumber;
-    private FlightStatus flightStatus;
+    private FlightStatus Status;
     
+    public Flight(Date departure, Date arrival, Airport arriv, Airport depart, String commercial, String atc, String notam, FlightStatus status){
+    	this.departureDate=departure;
+    	this.arrivalDate=arrival;
+    	this.departureAirport=arriv;
+    	this.arrivalAirport=depart;
+    	this.commercialNumber=commercial;
+    	this.atcNumber=atc;
+    	this.notamNumber=notam;
+    	this.Status=status;
+    	
+    }
 	public Date getDepartureDate() {
 		return departureDate;
 	}
@@ -53,9 +65,9 @@ public class Flight {
 		this.notamNumber = notamNumber;
 	}
 	public FlightStatus getFlightStatus() {
-		return flightStatus;
+		return Status;
 	}
 	public void setFlightStatus(FlightStatus flightStatus) {
-		this.flightStatus = flightStatus;
+		this.Status = flightStatus;
 	}
 }
