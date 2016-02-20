@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>
-      OCC Page
-    </title>
+    <title>OCC Page</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -13,9 +11,7 @@
 
     <div class="container-fluid">
       <div class="row">
-	<div class="col-md-3">
-	  <img src="FPS.JPG">
-	  <div class="col-md-9">
+	<div class="col-md-12">
 	  <img src="Plane.JPG">
 	  <br/> <br/> <br/>
 	</div>
