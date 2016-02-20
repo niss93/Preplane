@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<title>Acceuil</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		
+	</head>
+	<body>
+	  <div id = "sign">
+	    <a href="#" class="btn" type="button">Sign in</a>
+	  </div>
+	  <a href="#" class="btn" type="button">Sign up</a>
+	</body>
+</html>

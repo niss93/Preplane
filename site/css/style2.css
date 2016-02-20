@@ -1,0 +1,35 @@
+body{
+    background-image:url("avion2.jpg");
+    background-repeat : no-repeat;
+    background-size : 100% 100%;
+    background-attachment : fixed;
+}
+
+#sign_in{
+    background-color : white;
+    height : 250px;
+    width : 500px;
+    border : black medium solid;
+    border-radius : 10px;
+    margin-top : 100px;;
+    margin-left : 650px;
+}
+		      
+#bar{
+    margin-top : 10%;
+    margin-left : 25%;
+}
+
+p{
+    margin-left : 210px;
+}
+
+#forgot{
+    margin-top : 20px;
+    margin-left : 20px;;
+}
+
+#sign{
+    margin-top : 20px;
+    margin-left : 100px;
+}
