@@ -9,9 +9,13 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
-@Path("/jarib")
+@Path("/preplane")
 public class FlightDataAccess implements FlightDao, FlavorException {
 	List<Flight> listOfFlights;
 	
@@ -31,7 +35,7 @@ public class FlightDataAccess implements FlightDao, FlavorException {
 		FlightDataAccess dao= new FlightDataAccess();
 		return dao.listOfFlights;
 	}
-
+	
 	public List<Flight> getFlight1(Date date) {
 		// TODO Auto-generated method stub
 		return null;
@@ -41,22 +45,17 @@ public class FlightDataAccess implements FlightDao, FlavorException {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@GET
-	@Produces(MediaType.TEXT_HTML)
-	@Path("/flight?com={com_number}")
-	public String retour(@PathParam("com_number")String com_number){
-		return com_number;
-	}
-	public Flight getFlightCom(String com_number) {
-		// TODO Auto-generated method stub
+	
+	public Flight getFlightCom(@QueryParam("com")String com_number) {
+		// TDO Auto-generated method stub
 		return null;
 	}
 
-	public Flight getFlightAtc(String atc) {
+	public Flight getFlightAtc(@QueryParam("atc") String atc) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	public Flight getFlightNotam(String notam) {
 		// TODO Auto-generated method stub
 		return null;

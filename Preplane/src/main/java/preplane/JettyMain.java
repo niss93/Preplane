@@ -2,7 +2,9 @@ package preplane;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
+import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.filter.LoggingFilter;
@@ -28,10 +30,19 @@ public class JettyMain {
 		rc.packages(true, "preplane");
 		rc.register(JacksonFeature.class);
 		rc.register(LoggingFilter.class);
-
+		
+		//Add a handler for resources (/*)
+		ResourceHandler handlerPortal = new ResourceHandler();
+		handlerPortal.setResourceBase("src/main/webapp");
+		handlerPortal.setDirectoriesListed(false);
+		ContextHandler handlerPortalCtx = new ContextHandler();
+		handlerPortalCtx.setContextPath("/");
+		handlerPortalCtx.setHandler(handlerPortal);
+		
 		// Add a servlet handler for web services
 		ServletHolder servletHolder = new ServletHolder(new ServletContainer(rc));
 		ServletContextHandler handlerWebServices = new ServletContextHandler(ServletContextHandler.SESSIONS);
+		handlerWebServices.setContextPath("/ws");
 		handlerWebServices.addServlet(servletHolder, "/*");
 
 		// Activate handlers
