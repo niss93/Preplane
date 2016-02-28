@@ -3,16 +3,17 @@ body{
     background-repeat : no-repeat;
     background-size : 100% 100%;
     background-attachment : fixed;
+	margin : 0;
 }
 
 #sign_in{
     background-color : white;
-    height : 250px;
-    width : 500px;
+    height : 200px;
+    width : 300px;
     border : black medium solid;
     border-radius : 10px;
-    margin-top : 100px;;
-    margin-left : 650px;
+	position : relative;
+    margin : 100px auto;
 }
 		      
 #bar{
@@ -21,15 +22,16 @@ body{
 }
 
 p{
-    margin-left : 210px;
+	display : block;
+	text-align : center;
 }
 
 #forgot{
-    margin-top : 20px;
-    margin-left : 20px;;
+    margin : 20px auto;
 }
 
 #sign{
-    margin-top : 20px;
-    margin-left : 100px;
+	display : block;
+	position : absolute;
+    margin : 0px 50px;
 }
