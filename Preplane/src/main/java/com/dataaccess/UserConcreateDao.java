@@ -61,22 +61,7 @@ public class UserConcreateDao implements UserDao {
 		return detached.get(0);
 	}
 
-	public User getListName(String Name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public User getListfirst(String firstname) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public void addUser(@QueryParam("id") int id, 
-			@QueryParam("name") String name, 
-			@QueryParam("firstname") String firstname, 
-			@QueryParam("status") String status){
-		User user = new User(id, name, firstname, CrewStatus.valueOf(status));
-		
+	public void addUser(User user){
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -91,6 +76,14 @@ public class UserConcreateDao implements UserDao {
 			}
 			pm.close();
 		}
+	}
+	public User getListByid(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public List<User> getListByStatus(CrewStatus status) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

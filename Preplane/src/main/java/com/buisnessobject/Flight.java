@@ -2,7 +2,9 @@ package com.buisnessobject;
 import java.util.Date;
 
 import javax.jdo.annotations.PersistenceCapable;
+
 @PersistenceCapable
+
 public class Flight {
 	private Date departureDate;
     private Date arrivalDate;
@@ -12,6 +14,7 @@ public class Flight {
     private String atcNumber;
     private String notamNumber;
     private FlightStatus Status;
+    private Crew crew;
     
     public Flight(Date departure, Date arrival, Airport arriv, Airport depart, String commercial, String atc, String notam, FlightStatus status){
     	this.departureDate=departure;
@@ -71,5 +74,11 @@ public class Flight {
 	}
 	public void setFlightStatus(FlightStatus flightStatus) {
 		this.Status = flightStatus;
+	}
+	public Crew getCrew() {
+		return crew;
+	}
+	public void setCrew(Crew crew) {
+		this.crew = crew;
 	}
 }

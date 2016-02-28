@@ -22,7 +22,7 @@ version.ini
 *.rar
 *.tar
 *.zip
-
+version.ini
 # Logs and databases #
 ######################
 *.log

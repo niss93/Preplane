@@ -18,6 +18,6 @@ public interface CrewDao {
 	 * @param flight
 	 * @return
 	 */
-	Crew getCrewList(Flight flight);
+	Crew getCrewList(String atc);
 
 }

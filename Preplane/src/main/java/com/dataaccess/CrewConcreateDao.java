@@ -22,7 +22,7 @@ public class CrewConcreateDao implements CrewDao {
 		return null;
 	}
 
-	public Crew getCrewList(Flight flight) {
+	public Crew getCrewList(String atc) {
 		// TODO Auto-generated method stub
 		return null;
 	}

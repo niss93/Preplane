@@ -2,6 +2,8 @@ package com.dataaccess;
 
 import java.util.List;
 
+import com.buisnessobject.Plane;
+
 public interface PlaneDao {
 	/**
 	 * Get list of plane 

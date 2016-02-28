@@ -1,12 +1,15 @@
 package com.buisnessobject;
 
 import javax.jdo.annotations.PersistenceCapable;
+
 @PersistenceCapable
+
 public class User {
     private int id;
     private String name;
     private String firstName;
     private CrewStatus crewStatus;
+    private String password;
 
     public User(int id, String name, String firstname,CrewStatus crew){
     	this.id = id;

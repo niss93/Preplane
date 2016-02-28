@@ -7,6 +7,8 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
+import com.buisnessobject.Plane;
+
 public class PlaneConcreateDao implements PlaneDao  {
 
 	private PersistenceManagerFactory pmf;

@@ -2,6 +2,7 @@ package com.dataaccess;
 
 import java.util.List;
 
+import com.buisnessobject.CrewStatus;
 import com.buisnessobject.User;
 
 
@@ -16,18 +17,13 @@ public interface UserDao {
 	 * @param idUser
 	 * @return
 	 */
-	User getList(int id);
+	User getListByid(int id);
 	/**
-	 * Get the list of user according to following name
-	 * @param Name
+	 * 
+	 * @param status
 	 * @return
 	 */
-	User getListName(String Name);
-	/**
-	 * Get the list of user according to following first name 
-	 * @param firstname
-	 * @return
-	 */
-	User getListfirst(String firstname);
+	List<User> getListByStatus(CrewStatus status);
 	
+	void addUser(User user);
 }

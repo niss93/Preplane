@@ -3,6 +3,7 @@ package com.buisnessobject;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
+
 public class Airport {
 	private int id;
     private String country;
