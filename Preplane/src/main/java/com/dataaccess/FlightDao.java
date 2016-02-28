@@ -1,6 +1,10 @@
-package preplane;
+package com.dataaccess;
 import java.util.Date;
 import java.util.List;
+
+import com.buisnessobject.Airport;
+import com.buisnessobject.Flight;
+
 
 public interface FlightDao {
 	/**
