@@ -6,7 +6,9 @@
 *.exe
 *.o
 *.so
-.metadata
+version.ini
+.plugins*
+.plugins*
 ~*
 # Packages #
 ############
