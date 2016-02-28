@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Statement"/>
-<fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -12,8 +11,22 @@
 <fullyQualifiedTypeName name="javax.ws.rs.core.UriInfo"/>
 <fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="org.eclipse.jetty.server.handler.ResourceHandler"/>
 <fullyQualifiedTypeName name="org.eclipse.jetty.server.handler.ContextHandler"/>
+<fullyQualifiedTypeName name="com.buisnessobject.User"/>
+<fullyQualifiedTypeName name="com.buisnessobject.Airport"/>
+<fullyQualifiedTypeName name="com.buisnessobject.Crew"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Path"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.buisnessobject.Flight"/>
+<fullyQualifiedTypeName name="com.dataaccess.DAO"/>
+<fullyQualifiedTypeName name="com.dataaccess.FlightConcreateDao"/>
+<fullyQualifiedTypeName name="javax.ws.rs.POST"/>
+<fullyQualifiedTypeName name="javax.ws.rs.GET"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
 </qualifiedTypeNameHistroy>

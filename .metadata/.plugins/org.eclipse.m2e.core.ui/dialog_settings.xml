@@ -43,6 +43,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/home/atik/Downloads/jetty-jersey-master"/>
 			<item value="/home/atik/Downloads/samples-jdo-master/tutorial"/>
 			<item value="/home/atik/Downloads/datanucleus-master"/>
 		</list>
