@@ -3,6 +3,7 @@ package com.dataaccess;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
@@ -37,7 +38,6 @@ public class UserConcreateDao implements UserDao {
 	}
 
 	public User getList(int id) {
-		if(id == 2) return new User(2, "gentille", "hh", CrewStatus.OCC);
 		List<User> user = null;
 		List<User> detached = new ArrayList<User>();
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -62,6 +62,7 @@ public class UserConcreateDao implements UserDao {
 	}
 
 	public void addUser(User user){
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("com");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -76,6 +77,7 @@ public class UserConcreateDao implements UserDao {
 			}
 			pm.close();
 		}
+		System.out.println("User added with success");
 	}
 	public User getListByid(int id) {
 		// TODO Auto-generated method stub
