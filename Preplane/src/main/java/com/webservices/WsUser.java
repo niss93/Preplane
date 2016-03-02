@@ -45,9 +45,10 @@ public class WsUser {
 	public void addUser(@QueryParam("id") int id,
 			@QueryParam("name") String name,
 			@QueryParam("first") String firstname,
-			@QueryParam("status") String status){
+			@QueryParam("status") String status,
+			@QueryParam("password") String password){
 		
-		User user = new User(id, name, firstname, CrewStatus.valueOf(status));
+		User user = new User(id, name, firstname, CrewStatus.valueOf(status), password);
 		DAO.getUserDao().addUser(user);
 		
 	}

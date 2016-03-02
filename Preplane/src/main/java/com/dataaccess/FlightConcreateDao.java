@@ -54,7 +54,7 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 	
 
 	public User getFlight(String id) {
-		User user = new User(4,id,"lahiyane",CrewStatus.OCC);
+		User user = new User(4,id,"lahiyane",CrewStatus.OCC, "123123");
 		return user;
 	}
 
