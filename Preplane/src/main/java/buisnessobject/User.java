@@ -23,11 +23,12 @@ public class User {
 	@Persistent
 	private String password;
 
-    public User(int id, String name, String firstname,CrewStatus crew){
+    public User(int id, String name, String firstname,CrewStatus crew, String password){
     	this.id = id;
     	this.name = name;
     	this.firstName = firstname;
     	this.crewStatus= crew;
+    	this.password=password;
     }
     public String toString(){
     	return "id : "+this.id+", name: "+this.name+", firstname: "+this.firstName+", age: ";
