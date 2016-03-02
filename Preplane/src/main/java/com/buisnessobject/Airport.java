@@ -13,7 +13,7 @@ public class Airport {
     	this.id=id;
     	this.country=country;
     	this.city=city;
-    	
+    	System.out.println("haha");
     }
 	public int getIdAirport() {
 		return id;
