@@ -1,4 +1,5 @@
-package com.dataaccess;
+package dataaccess;
+
 
 public class DAO {
 	public static UserDao getUserDao(){

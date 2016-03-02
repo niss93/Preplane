@@ -1,4 +1,4 @@
-package com.webservices;
+package webservices;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import com.buisnessobject.Flight;
-import com.dataaccess.DAO;
-import com.dataaccess.FlightConcreateDao;
+import buisnessobject.Flight;
+import dataaccess.DAO;
+import dataaccess.FlightConcreateDao;
 
 @Path("/preplane")
 public class WsFlight {
@@ -45,5 +45,5 @@ public class WsFlight {
 	public Flight getFlightByStatus(@QueryParam("status") String notam){
 		return DAO.getFlightDao().getFlightAtc(notam);
 	}
-
+	
 }

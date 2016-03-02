@@ -1,4 +1,4 @@
-package com.webservices;
+package webservices;
 
 import java.util.List;
 
@@ -11,9 +11,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import com.buisnessobject.CrewStatus;
-import com.buisnessobject.User;
-import com.dataaccess.DAO;
+import buisnessobject.CrewStatus;
+import buisnessobject.User;
+import dataaccess.DAO;
+@SuppressWarnings(value = { "unchecked" })
 
 @Path("/preplane")
 public class WsUser {

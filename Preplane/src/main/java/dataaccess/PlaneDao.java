@@ -1,8 +1,8 @@
-package com.dataaccess;
+package dataaccess;
 
 import java.util.List;
 
-import com.buisnessobject.Plane;
+import buisnessobject.Plane;
 
 public interface PlaneDao {
 	/**

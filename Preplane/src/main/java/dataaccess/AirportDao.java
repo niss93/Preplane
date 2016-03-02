@@ -1,9 +1,9 @@
-package com.dataaccess;
+package dataaccess;
 
 
 import java.util.List;
 
-import com.buisnessobject.Airport;
+import buisnessobject.Airport;
 
 public interface AirportDao {
 	/** Get the list of airport

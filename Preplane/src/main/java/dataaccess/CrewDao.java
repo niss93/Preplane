@@ -1,8 +1,8 @@
-package com.dataaccess;
+package dataaccess;
 import java.util.List;
 
-import com.buisnessobject.Crew;
-import com.buisnessobject.Flight;
+import buisnessobject.Crew;
+import buisnessobject.Flight;
 
 
 

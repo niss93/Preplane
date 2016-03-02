@@ -1,4 +1,4 @@
-package com.buisnessobject;
+package buisnessobject;
 import java.util.List;
 
 import javax.jdo.annotations.PersistenceCapable;

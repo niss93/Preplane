@@ -1,4 +1,4 @@
-package com.dataaccess;
+package dataaccess;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-import com.buisnessobject.Crew;
-import com.buisnessobject.Flight;
+import buisnessobject.Crew;
+import buisnessobject.Flight;
 
 
 public class CrewConcreateDao implements CrewDao {
@@ -18,7 +18,7 @@ public class CrewConcreateDao implements CrewDao {
 		this.pmf = pmf;
 	}
 	public List<Crew> getCrewList() {
-		// TODO Auto-generated method stub
+		// TODO Auto-gevc cnerated method stub
 		return null;
 	}
 
@@ -27,13 +27,13 @@ public class CrewConcreateDao implements CrewDao {
 		return null;
 	}
 	
-	public void addCrew(Crew crew){
+	public void addCrew(Crew crewh){
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
 
-			pm.makePersistent(crew);
+			pm.makePersistent(crewh);
 
 			tx.commit();
 		} finally {

@@ -19,7 +19,6 @@
 <fullyQualifiedTypeName name="org.eclipse.jetty.server.handler.ContextHandler"/>
 <fullyQualifiedTypeName name="com.buisnessobject.User"/>
 <fullyQualifiedTypeName name="com.buisnessobject.Airport"/>
-<fullyQualifiedTypeName name="com.buisnessobject.Crew"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.buisnessobject.Flight"/>
@@ -29,4 +28,9 @@
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="javax.jdo.annotations.Persistent"/>
+<fullyQualifiedTypeName name="javax.jdo.annotations.PrimaryKey"/>
+<fullyQualifiedTypeName name="com.buisnessobject.Crew"/>
+<fullyQualifiedTypeName name="com.dataaccess.UserDao"/>
 </qualifiedTypeNameHistroy>

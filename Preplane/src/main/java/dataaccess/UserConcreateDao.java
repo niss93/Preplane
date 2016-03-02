@@ -1,7 +1,8 @@
-package com.dataaccess;
+package dataaccess;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
@@ -17,8 +18,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import com.buisnessobject.CrewStatus;
-import com.buisnessobject.User;
+import buisnessobject.CrewStatus;
+import buisnessobject.User;
 
 public class UserConcreateDao implements UserDao {
 	
@@ -62,7 +63,7 @@ public class UserConcreateDao implements UserDao {
 	}
 
 	public void addUser(User user){
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("com");
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {

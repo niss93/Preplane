@@ -1,9 +1,9 @@
-package com.dataaccess;
+package dataaccess;
 import java.util.Date;
 import java.util.List;
 
-import com.buisnessobject.Airport;
-import com.buisnessobject.Flight;
+import buisnessobject.Airport;
+import buisnessobject.Flight;
 
 
 public interface FlightDao {

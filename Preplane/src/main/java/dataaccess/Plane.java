@@ -1,4 +1,4 @@
-package com.dataaccess;
+package dataaccess;
 
 
 import javax.jdo.annotations.PersistenceCapable;

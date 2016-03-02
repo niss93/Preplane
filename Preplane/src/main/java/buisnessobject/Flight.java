@@ -1,4 +1,4 @@
-package com.buisnessobject;
+package buisnessobject;
 import java.util.Date;
 
 import javax.jdo.annotations.PersistenceCapable;

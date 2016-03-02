@@ -1,4 +1,4 @@
-package com.dataaccess;
+package dataaccess;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,11 +21,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import com.buisnessobject.Airport;
-import com.buisnessobject.CrewStatus;
-import com.buisnessobject.Flight;
-import com.buisnessobject.FlightStatus;
-import com.buisnessobject.User;
+import buisnessobject.Airport;
+import buisnessobject.CrewStatus;
+import buisnessobject.Flight;
+import buisnessobject.FlightStatus;
+import buisnessobject.User;
 
 
 public class FlightConcreateDao implements FlightDao, FlavorException {

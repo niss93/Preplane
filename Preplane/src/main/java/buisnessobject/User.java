@@ -1,15 +1,27 @@
-package com.buisnessobject;
+package buisnessobject;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 
 public class User {
+	@Persistent
+	@PrimaryKey
     private int id;
+	
+	@Persistent
     private String name;
-    private String firstName;
-    private CrewStatus crewStatus;
-    private String password;
+    
+	@Persistent
+	private String firstName;
+    
+	@Persistent
+	private CrewStatus crewStatus;
+    
+	@Persistent
+	private String password;
 
     public User(int id, String name, String firstname,CrewStatus crew){
     	this.id = id;

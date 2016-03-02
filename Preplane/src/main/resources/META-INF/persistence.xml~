@@ -11,7 +11,7 @@
         <properties>
             <property name="javax.jdo.option.ConnectionURL" value="jdbc:hsqldb:mem:preplane"/>
             <property name="javax.jdo.option.ConnectionDriverName" value="org.hsqldb.jdbcDriver"/>
-            <property name="javax.jdo.option.ConnectionUserName" value="EIDD"/>
+            <property name="javax.jdo.option.ConnectionUserName" value="SA"/>
             <property name="javax.jdo.option.ConnectionPassword" value=""/>
             <property name="javax.jdo.option.Mapping" value="hsql"/>
 

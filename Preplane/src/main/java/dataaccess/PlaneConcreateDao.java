@@ -1,4 +1,4 @@
-package com.dataaccess;
+package dataaccess;
 
 
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-import com.buisnessobject.Plane;
+import buisnessobject.Plane;
 
 public class PlaneConcreateDao implements PlaneDao  {
 

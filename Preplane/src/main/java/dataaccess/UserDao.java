@@ -1,9 +1,9 @@
-package com.dataaccess;
+package dataaccess;
 
 import java.util.List;
 
-import com.buisnessobject.CrewStatus;
-import com.buisnessobject.User;
+import buisnessobject.CrewStatus;
+import buisnessobject.User;
 
 
 public interface UserDao {   

@@ -1,4 +1,4 @@
-package com.dataaccess;
+package webservices;
 
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
@@ -17,7 +17,7 @@ public class JettyMain {
 
 	public static void main(String[] args) throws Exception {
 		// Initialize the server
-		Server server = new Server(); 
+		Server server = new Server();
 
 		// Add a connector
 		ServerConnector connector = new ServerConnector(server);
@@ -28,18 +28,28 @@ public class JettyMain {
 
 		// Configure Jersey
 		ResourceConfig rc = new ResourceConfig();
-		rc.packages(true, "com.webservices");
+		rc.packages(true, "webservices");
 		rc.register(JacksonFeature.class);
 		rc.register(LoggingFilter.class);
-		
-		// Add a servlet handler for web services
+
+		// Add a servlet handler for web services (/ws/*)
 		ServletHolder servletHolder = new ServletHolder(new ServletContainer(rc));
 		ServletContextHandler handlerWebServices = new ServletContextHandler(ServletContextHandler.SESSIONS);
+		handlerWebServices.setContextPath("/ws");
 		handlerWebServices.addServlet(servletHolder, "/*");
+
+		// Add a handler for resources (/*)
+		ResourceHandler handlerPortal = new ResourceHandler();
+		handlerPortal.setResourceBase("src/main/webapp");
+		handlerPortal.setDirectoriesListed(false);
+		handlerPortal.setWelcomeFiles(new String[] { "home.html" });
+		ContextHandler handlerPortalCtx = new ContextHandler();
+		handlerPortalCtx.setContextPath("/");
+		handlerPortalCtx.setHandler(handlerPortal);
 
 		// Activate handlers
 		ContextHandlerCollection contexts = new ContextHandlerCollection();
-		contexts.setHandlers(new Handler[] { handlerWebServices });
+		contexts.setHandlers(new Handler[] { handlerWebServices, handlerPortalCtx });
 		server.setHandler(contexts);
 
 		// Start server

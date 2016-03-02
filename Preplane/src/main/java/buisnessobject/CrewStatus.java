@@ -1,4 +1,4 @@
-package com.buisnessobject;
+package buisnessobject;
 public enum CrewStatus {
     OCC, CREW;
 }
