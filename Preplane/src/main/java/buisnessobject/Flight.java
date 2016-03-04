@@ -2,25 +2,36 @@ package buisnessobject;
 import java.util.Date;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 
 public class Flight {
+	@Persistent
 	private Date departureDate;
-    private Date arrivalDate;
-    private Airport departureAirport;
-    private Airport arrivalAirport;
+	@Persistent
+    private String departureAirport;
+	@Persistent
+    private String arrivalAirport;
+	@Persistent
     private String commercialNumber;
+	
+	@PrimaryKey
+	@Persistent
     private String atcNumber;
+	@Persistent
     private String notamNumber;
+	@Persistent
     private FlightStatus Status;
+	@Persistent
     private Crew crew;
     
-    public Flight(Date departure, Date arrival, Airport arriv, Airport depart, String commercial, String atc, String notam, FlightStatus status){
+    public Flight(Date departure, String arriv, String depart, String commercial, 
+    		String atc, String notam, FlightStatus status){
     	this.departureDate=departure;
-    	this.arrivalDate=arrival;
-    	this.departureAirport=arriv;
-    	this.arrivalAirport=depart;
+    	this.setDepartureAirport(arriv);
+    	this.setArrivalAirport(depart);
     	this.commercialNumber=commercial;
     	this.atcNumber=atc;
     	this.notamNumber=notam;
@@ -33,24 +44,9 @@ public class Flight {
 	public void setDepartureDate(Date departureDate) {
 		this.departureDate = departureDate;
 	}
-	public Date getArrivalDate() {
-		return arrivalDate;
-	}
-	public void setArrivalDate(Date arrivalDate) {
-		this.arrivalDate = arrivalDate;
-	}
-	public Airport getDepartureAirport() {
-		return departureAirport;
-	}
-	public void setDepartureAirport(Airport departureAirport) {
-		this.departureAirport = departureAirport;
-	}
-	public Airport getArrivalAirport() {
-		return arrivalAirport;
-	}
-	public void setArrivalAirport(Airport arrivalAirport) {
-		this.arrivalAirport = arrivalAirport;
-	}
+	
+
+	
 	public String getCommercialNumber() {
 		return commercialNumber;
 	}
@@ -80,5 +76,17 @@ public class Flight {
 	}
 	public void setCrew(Crew crew) {
 		this.crew = crew;
+	}
+	public String getDepartureAirport() {
+		return departureAirport;
+	}
+	public void setDepartureAirport(String departureAirport) {
+		this.departureAirport = departureAirport;
+	}
+	public String getArrivalAirport() {
+		return arrivalAirport;
+	}
+	public void setArrivalAirport(String arrivalAirport) {
+		this.arrivalAirport = arrivalAirport;
 	}
 }

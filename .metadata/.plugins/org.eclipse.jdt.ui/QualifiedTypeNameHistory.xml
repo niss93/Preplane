@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="com.buisnessobject.User"/>
 <fullyQualifiedTypeName name="com.buisnessobject.Airport"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.buisnessobject.Flight"/>
 <fullyQualifiedTypeName name="com.dataaccess.DAO"/>
 <fullyQualifiedTypeName name="com.dataaccess.FlightConcreateDao"/>
@@ -33,4 +32,12 @@
 <fullyQualifiedTypeName name="javax.jdo.annotations.PrimaryKey"/>
 <fullyQualifiedTypeName name="com.buisnessobject.Crew"/>
 <fullyQualifiedTypeName name="com.dataaccess.UserDao"/>
+<fullyQualifiedTypeName name="dataaccess.DAO"/>
+<fullyQualifiedTypeName name="org.eclipse.jetty.server.Authentication.User"/>
+<fullyQualifiedTypeName name="buisnessobject.User"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="buisnessobject.CrewStatus"/>
+<fullyQualifiedTypeName name="buisnessobject.Flight"/>
+<fullyQualifiedTypeName name="org.datanucleus.store.query.Query"/>
+<fullyQualifiedTypeName name="javax.jdo.Query"/>
 </qualifiedTypeNameHistroy>

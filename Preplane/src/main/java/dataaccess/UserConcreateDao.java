@@ -17,7 +17,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-
 import buisnessobject.CrewStatus;
 import buisnessobject.User;
 
@@ -38,30 +37,7 @@ public class UserConcreateDao implements UserDao {
 		return list;
 	}
 
-	public User getList(int id) {
-		List<User> user = null;
-		List<User> detached = new ArrayList<User>();
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		try {
-			tx.begin();
-			Query q = pm.newQuery(User.class);
-			q.declareParameters("int id");
-			q.setFilter("id == id");
-
-			user =  (List<User>) q.execute(id);
-			detached =  (List<User>) pm.detachCopyAll(user);
-
-			tx.commit();
-		} finally {
-			if (tx.isActive()) {
-				tx.rollback();
-			}
-			pm.close();
-		}
-		return detached.get(0);
-	}
-
+	
 	public void addUser(User user){
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -85,8 +61,59 @@ public class UserConcreateDao implements UserDao {
 		return null;
 	}
 	public List<User> getListByStatus(CrewStatus status) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<User> actions = null;
+		
+		List<User> detached = new ArrayList<User>();
+		
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+		try {
+			tx.begin();
+			Query q = pm.newQuery(User.class);
+			q.declareParameters("String status");
+			q.setFilter("crewstatus == status");
+
+			actions = (List<User>) q.execute(status);
+			detached = (List<User>) pm.detachCopyAll(actions);
+
+			tx.commit();
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+		return detached;
+	}
+	
+	@SuppressWarnings("unchecked")
+
+	public List<User> getUserByid(int id) {
+		List<User> actions = null;
+		List<User> detached = new ArrayList<User>();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try {
+			tx.begin();
+			Query q = pm.newQuery(User.class);
+			q.declareParameters("int id1");
+			q.setFilter("id1 == id");
+
+			actions = (List<User>) q.execute(id);
+			detached = (List<User>) pm.detachCopyAll(actions);
+
+			tx.commit();
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+		return detached;
 	}
 
 }

@@ -30,7 +30,7 @@ public class WsUser {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/user/{id}")
 	public List<User> getUser(@PathParam("id") int id){
-		return (List<User>) DAO.getUserDao().getListByid(id);
+		return (List<User>) DAO.getUserDao().getUserByid(id);
 	}
 	
 	@GET

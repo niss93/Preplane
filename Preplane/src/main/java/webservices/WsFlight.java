@@ -1,7 +1,9 @@
 package webservices;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -10,9 +12,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import buisnessobject.Airport;
+import buisnessobject.CrewStatus;
 import buisnessobject.Flight;
+import buisnessobject.FlightStatus;
+import buisnessobject.User;
 import dataaccess.DAO;
 import dataaccess.FlightConcreateDao;
+import parsers.DateParser;
 
 @Path("/preplane")
 public class WsFlight {
@@ -46,4 +53,20 @@ public class WsFlight {
 		return DAO.getFlightDao().getFlightAtc(notam);
 	}
 	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/flight")
+	public void addFlight(@QueryParam("depart") String departure,
+			@QueryParam("arriv") String arrival,
+			@QueryParam("date") String date,
+			@QueryParam("notam") String notam,
+			@QueryParam("atc") String atc,
+			@QueryParam("status") String status){
+		
+		Flight flight = new Flight(DateParser.StringToDate(date), arrival, departure,
+				"test commercial", atc, notam, FlightStatus.valueOf(status));
+		DAO.getFlightDao().addFlight(flight);
+		
+		}
+		
 }

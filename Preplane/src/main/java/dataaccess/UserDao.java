@@ -17,13 +17,13 @@ public interface UserDao {
 	 * @param idUser
 	 * @return
 	 */
-	User getListByid(int id);
+	List<User> getUserByid(int id);
 	/**
 	 * 
-	 * @param status
+	 * @param crewStatus
 	 * @return
 	 */
-	List<User> getListByStatus(CrewStatus status);
+	List<User> getListByStatus(CrewStatus crewStatus);
 	
 	void addUser(User user);
 }

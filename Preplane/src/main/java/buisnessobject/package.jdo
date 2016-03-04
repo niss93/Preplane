@@ -3,14 +3,62 @@
     "-//Sun Microsystems, Inc.//DTD Java Data Objects Metadata 2.0//EN"
     "http://java.sun.com/dtd/jdo_2_0.dtd">
 <jdo>
-    <package name="com.buisnessobject">
+    <package name="buisnessobject">
         <class
-              name="Flight">
+              name="Plane" >
             <field
-                  name="departureDate"
+                  name="id"
                   persistence-modifier="persistent"/>
             <field
-                  name="arrivalDate"
+                  name="planeModel"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="planeCapacity"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="Crew">
+            <field
+                  name="crewList"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="flight"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="Airport">
+            <field
+                  name="id"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="country"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="city"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="User" detachable="true">
+            <field
+                  name="id"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="name"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="firstName"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="crewStatus"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="password"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="Flight" detachable="true">
+            <field
+                  name="departureDate"
                   persistence-modifier="persistent"/>
             <field
                   name="departureAirport"
@@ -32,57 +80,6 @@
                   persistence-modifier="persistent"/>
             <field
                   name="crew"
-                  persistence-modifier="persistent"/>
-        </class>
-        <class
-              name="Crew">
-            <field
-                  name="crewList"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="flight"
-                  persistence-modifier="persistent"/>
-        </class>
-        <class
-              name="User">
-            <field
-                  name="id"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="name"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="firstName"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="crewStatus"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="password"
-                  persistence-modifier="persistent"/>
-        </class>
-        <class
-              name="Airport">
-            <field
-                  name="id"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="country"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="city"
-                  persistence-modifier="persistent"/>
-        </class>
-        <class
-              name="Plane">
-            <field
-                  name="id"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="planeModel"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="planeCapacity"
                   persistence-modifier="persistent"/>
         </class>
     </package>

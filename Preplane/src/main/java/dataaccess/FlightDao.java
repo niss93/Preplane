@@ -49,9 +49,11 @@ public interface FlightDao {
 	 */
 	List<Flight> getFlightStatus(String status);
 	
-	
-	
-	
-	
-
+	/**
+	 * 
+	 * @param flight
+	 */
+	void addFlight(Flight flight);
+	void deleteFlight(int id);
+	public Flight getFlightbyId(int id);
 }

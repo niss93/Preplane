@@ -1,37 +1,23 @@
 package dataaccess;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 import javax.print.DocFlavor;
 import javax.print.FlavorException;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
+
 
 import buisnessobject.Airport;
-import buisnessobject.CrewStatus;
 import buisnessobject.Flight;
-import buisnessobject.FlightStatus;
-import buisnessobject.User;
 
 
 public class FlightConcreateDao implements FlightDao, FlavorException {
 	List<Flight> listOfFlights;
 	
-	private PersistenceManagerFactory pmf;
+	private PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");;
 
 	public FlightConcreateDao(PersistenceManagerFactory pmf) {
 		this.pmf = pmf;
@@ -42,29 +28,22 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 		return null;
 	}
 	public FlightConcreateDao(){
-		this.listOfFlights = new ArrayList<Flight>();
-		this.listOfFlights.add(new Flight(new Date(),new Date(),new Airport(1,"",""),new Airport(1,"",""),"haha","hehe","ehe",FlightStatus.DELAYED));
 		
 	}
 
 	public List<Flight> getFlight() {
-		FlightConcreateDao dao= new FlightConcreateDao();
-		return dao.listOfFlights;
+		return listOfFlights;
+		
 	}
 	
 
-	public User getFlight(String id) {
-		User user = new User(4,id,"lahiyane",CrewStatus.OCC, "123123");
-		return user;
+	public Flight getFlightbyId(int id) {
+		return null;
+		
 	}
 
 	public List<Flight> getFlightAir(Airport airport) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public Flight getFlightCom1(String com_number) {
-		// TDO Auto-generated method stub
 		return null;
 	}
 
@@ -87,7 +66,7 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 		return null;
 	}
 	
-	public void addFlight(Flight flight){
+	public void addFlight(Flight flight) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -102,12 +81,21 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 			}
 			pm.close();
 		}
+		System.out.println("Flight added with success");
 	}
 
 	public Flight getFlightCom(String com_number) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void deleteFlight(int id) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Object obj = pm.getObjectById(id);  // Retrieves the object to delete
+		pm.deletePersistent(obj);
+	}
+
+	
 
 	
 

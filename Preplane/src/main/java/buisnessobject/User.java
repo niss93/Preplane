@@ -31,7 +31,7 @@ public class User {
     	this.password=password;
     }
     public String toString(){
-    	return "id : "+this.id+", name: "+this.name+", firstname: "+this.firstName+", age: ";
+    	return "id : "+this.id+", name: "+this.name+", firstname: "+this.firstName;
     }
     public int getIdUser() {
 		return id;
