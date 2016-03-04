@@ -98,87 +98,7 @@
 		    </th>
 		  </tr>
 		</thead>
-		<tbody>
-		  <tr class="success">
-		    <td>
-		      TVF1234
-		    </td>
-		    <td>
-		      TO12C
-		    </td>
-		    <td>
-		      Paris-Orly LFPO
-		    </td>
-		    <td>
-		      Oslo
-		    </td>
-		    <td>
-		      On time
-		    </td>
-		    <td>
-		      StarCrew
-		    </td>
-		  </tr>
-		  <tr class="warning">
-		    <td>
-		      TVF1254
-		    </td>
-		    <td>
-		      TO22C
-		    </td>
-		    <td>
-		      Paris-Orly LFPO
-		    </td>
-		    <td>
-		      Mumbay
-		    </td>
-		    <td>
-		      Delayed
-		    </td>
-		    <td>
-		      Dream Team
-		    </td>
-		  </tr>
-		  <tr class="danger">
-		    <td>
-		      TVF1286
-		    </td>
-		    <td>
-		      TO24C
-		    </td>
-		    <td>
-		      Paris-Orly LFPO
-		    </td>
-		    <td>
-		      Chicago
-		    </td>
-		    <td>
-		      Cancelled
-		    </td>
-		    <td>
-		      None
-		    </td>
-		  </tr>
-		  <tr class="info">
-		    <td>
-		      TVF1286
-		    </td>
-		    <td>
-		      TO24C
-		    </td>
-		    <td>
-		      Paris-Orly LFPO
-		    </td>
-		    <td>
-		      Nice
-		    </td>
-		    <td>
-		      Boarding
-		    </td>
-		    <td>
-		      Spurs
-		    </td>
-		  </tr>
+		<tbody id="listbody">
 		</tbody>
 	      </table>
 	      <ul class="pagination">
@@ -310,8 +230,19 @@
       </div>
     </div>
 
-    <script src="js/jquery.min.js"></script>
+    <script src="jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+	    $.ajax({
+		  url: "ws/preplane/flight",
+		})
+		  .done(function( data ) {
+		      console.log( "Got data", data );
+		      data.forEach(function(flight) {
+		      $("#listbody").append('<tr class="success"><td>'+flight['commercialNumber']+'</td><td>'+flight['atcNumber']+'</td><td>'+flight['departureAirport']['city']+'</td><td>'+flight['arrivalAirport']['city']+'</td><td>'+flight['flightStatus']+'</td><td>'+flight['crew']+'</td></tr>');
+		    });  
+		  });
+    </script>
   </body>
 </html>
