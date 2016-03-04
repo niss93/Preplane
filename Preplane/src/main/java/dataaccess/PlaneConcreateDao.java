@@ -6,6 +6,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
+import javax.jdo.annotations.Query;
 
 import buisnessobject.Plane;
 
@@ -48,5 +49,71 @@ public class PlaneConcreateDao implements PlaneDao  {
 			pm.close();
 		}
 	}
+
+	
+	
+
+	public void delete(Plane plane) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try
+		{
+		    tx = pm.currentTransaction();
+		    tx.begin();
+
+		    pm.deletePersistent(plane);
+
+		    tx.commit();
+		}
+		finally {
+			
+		    if (tx.isActive())
+		    {
+		        tx.rollback();
+		    }
+		    pm.close();
+		}
+		
+	}
+
+	public void update(int id, String planeModel, int planeCapacity) {
+		// TODO Auto-generated method stub
+		
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+		try
+		{
+		    tx.begin();
+
+			//Plane p = getPlanes(id);
+		    Query q = (Query) pm.newQuery(Plane.class);
+			((javax.jdo.Query) q).declareParameters("int idPlane");
+			((javax.jdo.Query) q).setFilter("id == idPlane");
+
+			Plane p = (Plane) ((javax.jdo.Query) q).execute(id);
+	        p.setPlaneModel(planeModel); 
+	        p.setPlaneCapacity(planeCapacity);
+
+		    tx.commit();
+		}
+		finally
+		{
+		    if (tx.isActive())
+		    {
+		        tx.rollback();
+		    }
+		    pm.close();
+		}
+	
+		
+	}
+
+	
+	
+
+
 
 }
