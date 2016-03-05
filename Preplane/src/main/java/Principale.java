@@ -9,6 +9,7 @@ public class Principale {
 	
 /*DAO.getFlightDao().addFlight(new Flight(DateParser.StringToDate("13/05/1992"),"Marseille",
 				"Rabat","atc1Z","atc43E","notam",FlightStatus.valueOf("ON_TIME"),"Dream team"));*/
+		DAO.getFlightDao().deleteFlight(2);
 	}
 
 }

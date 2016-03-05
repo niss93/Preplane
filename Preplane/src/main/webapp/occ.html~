@@ -247,7 +247,7 @@
 		  .done(function( data ) {
 		      console.log( "Got data", data );
 		      data.forEach(function(flight) {
-		      $("#listbody").append('<tr class="success"><td>'+flight['commercialNumber']+'</td><td>'+flight['atcNumber']+'</td><td>'+flight['departureAirport']['city']+'</td><td>'+flight['arrivalAirport']['city']+'</td><td>'+flight['flightStatus']+'</td><td>'+flight['crew']+'</td></tr>');
+		      $("#listbody").append('<tr class="success"><td>'+flight['commercialNumber']+'</td><td>'+flight['atcNumber']+'</td><td>'+flight['departureAirport']+'</td><td>'+flight['arrivalAirport']+'</td><td>'+flight['flightStatus']+'</td><td>'+flight['crew']+'</td></td>'+flight['departureDate']);
 		    });  
 		  });
     </script>

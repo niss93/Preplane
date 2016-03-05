@@ -113,8 +113,10 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 
 	public void deleteFlight(int id) {
 		PersistenceManager pm = pmf.getPersistenceManager();
-		Object obj = pm.getObjectById(id);  // Retrieves the object to delete
-		pm.deletePersistent(obj);
+		//Object identity = pm.newObjectIdInstance(Flight.class, );
+		//Object obj = pm.getObjectById(identity);  // Retrieves the object to delete
+		//pm.deletePersistent(obj);
+		
 	}
 
 	

@@ -28,6 +28,7 @@ public class WsFlight {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/flight")
+	//Renvoie tout les vols dans la base de données
 	public List<Flight> getFlight(){
 		return DAO.getFlightDao().getFlight();
 	}

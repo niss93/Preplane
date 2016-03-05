@@ -53,6 +53,15 @@ public class WsUser {
 		DAO.getUserDao().addUser(user);
 		
 	}
+	@GET
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/user")
+	public void addUser(@QueryParam("mail") String mail,
+			@QueryParam("password") String pass){
+
+		
+	}
+	
 	
 	
 	
