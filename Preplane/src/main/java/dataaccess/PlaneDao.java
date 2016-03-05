@@ -23,5 +23,9 @@ public interface PlaneDao {
 	 */
 	List<Plane> getPlanesCapa(int Capacity);
 	
+	void addPlane(Plane p);
+	void delete (Plane plane);
+	void update (int id,String planeModel,int planeCapacity);
+	
 	
 }
