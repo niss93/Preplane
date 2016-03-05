@@ -5,7 +5,7 @@
 <jdo>
     <package name="buisnessobject">
         <class
-              name="Plane" >
+              name="Plane">
             <field
                   name="id"
                   persistence-modifier="persistent"/>
@@ -38,7 +38,7 @@
                   persistence-modifier="persistent"/>
         </class>
         <class
-              name="User" detachable="true">
+              name="User">
             <field
                   name="id"
                   persistence-modifier="persistent"/>
@@ -56,7 +56,7 @@
                   persistence-modifier="persistent"/>
         </class>
         <class
-              name="Flight" detachable="true">
+              name="Flight">
             <field
                   name="departureDate"
                   persistence-modifier="persistent"/>
@@ -70,6 +70,9 @@
                   name="commercialNumber"
                   persistence-modifier="persistent"/>
             <field
+                  name="crew"
+                  persistence-modifier="persistent"/>
+            <field
                   name="atcNumber"
                   persistence-modifier="persistent"/>
             <field
@@ -77,9 +80,6 @@
                   persistence-modifier="persistent"/>
             <field
                   name="Status"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="crew"
                   persistence-modifier="persistent"/>
         </class>
     </package>

@@ -16,19 +16,18 @@ public class Flight {
     private String arrivalAirport;
 	@Persistent
     private String commercialNumber;
-	
-	@PrimaryKey
+	@Persistent
+	private String crew;
 	@Persistent
     private String atcNumber;
 	@Persistent
     private String notamNumber;
 	@Persistent
     private FlightStatus Status;
-	@Persistent
-    private Crew crew;
+	
     
     public Flight(Date departure, String arriv, String depart, String commercial, 
-    		String atc, String notam, FlightStatus status){
+    		String atc, String notam, FlightStatus status, String crew){
     	this.departureDate=departure;
     	this.setDepartureAirport(arriv);
     	this.setArrivalAirport(depart);
@@ -36,7 +35,11 @@ public class Flight {
     	this.atcNumber=atc;
     	this.notamNumber=notam;
     	this.Status=status;
+    	this.crew = crew;
     	
+    }
+    public String toString(){
+    	return "Departure: "+this.departureAirport;
     }
 	public Date getDepartureDate() {
 		return departureDate;
@@ -71,12 +74,7 @@ public class Flight {
 	public void setFlightStatus(FlightStatus flightStatus) {
 		this.Status = flightStatus;
 	}
-	public Crew getCrew() {
-		return crew;
-	}
-	public void setCrew(Crew crew) {
-		this.crew = crew;
-	}
+	
 	public String getDepartureAirport() {
 		return departureAirport;
 	}

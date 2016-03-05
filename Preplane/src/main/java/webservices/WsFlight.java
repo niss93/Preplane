@@ -61,10 +61,10 @@ public class WsFlight {
 			@QueryParam("date") String date,
 			@QueryParam("notam") String notam,
 			@QueryParam("atc") String atc,
-			@QueryParam("status") String status){
+			@QueryParam("status") String status, @QueryParam("status") String crew){
 		
 		Flight flight = new Flight(DateParser.StringToDate(date), arrival, departure,
-				"test commercial", atc, notam, FlightStatus.valueOf(status));
+				"test commercial", atc, notam, FlightStatus.valueOf(status), crew);
 		DAO.getFlightDao().addFlight(flight);
 		
 		}

@@ -1,10 +1,12 @@
 package dataaccess;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 import javax.jdo.Transaction;
 import javax.print.DocFlavor;
 import javax.print.FlavorException;
@@ -12,6 +14,7 @@ import javax.print.FlavorException;
 
 import buisnessobject.Airport;
 import buisnessobject.Flight;
+import buisnessobject.User;
 
 
 public class FlightConcreateDao implements FlightDao, FlavorException {
@@ -32,7 +35,26 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 	}
 
 	public List<Flight> getFlight() {
-		return listOfFlights;
+		
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+		try {
+			tx.begin();
+			Query q = pm.newQuery(Flight.class);
+			q.setFilter("1 == indice");
+			q.declareParameters("int indice");
+			List<Flight> results = (List<Flight>)q.execute(1);
+
+			tx.commit();
+			return results;
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
 		
 	}
 	
