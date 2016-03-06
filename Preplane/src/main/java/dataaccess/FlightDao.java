@@ -54,6 +54,6 @@ public interface FlightDao {
 	 * @param flight
 	 */
 	void addFlight(Flight flight);
-	void deleteFlight(int id);
+	void deleteFlight(String atc);
 	public Flight getFlightbyId(int id);
 }

@@ -56,10 +56,9 @@ public class WsUser {
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/user")
-	public void addUser(@QueryParam("mail") String mail,
+	public boolean addUser(@QueryParam("mail") String mail,
 			@QueryParam("password") String pass){
-
-		
+		return true;
 	}
 	
 	

@@ -3,13 +3,12 @@ import java.util.Date;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 
 public class Flight {
 	@Persistent
-	private Date departureDate;
+	private String departureDate;
 	@Persistent
     private String departureAirport;
 	@Persistent
@@ -26,7 +25,7 @@ public class Flight {
     private FlightStatus Status;
 	
     
-    public Flight(Date departure, String arriv, String depart, String commercial, 
+    public Flight(String departure, String arriv, String depart, String commercial, 
     		String atc, String notam, FlightStatus status, String crew){
     	this.departureDate=departure;
     	this.setDepartureAirport(arriv);
@@ -41,10 +40,10 @@ public class Flight {
     public String toString(){
     	return "Departure: "+this.departureAirport;
     }
-	public Date getDepartureDate() {
+	public String getDepartureDate() {
 		return departureDate;
 	}
-	public void setDepartureDate(Date departureDate) {
+	public void setDepartureDate(String departureDate) {
 		this.departureDate = departureDate;
 	}
 	
@@ -86,5 +85,9 @@ public class Flight {
 	}
 	public void setArrivalAirport(String arrivalAirport) {
 		this.arrivalAirport = arrivalAirport;
+	}
+	
+	public String getCrew(){
+		return this.crew;
 	}
 }

@@ -89,6 +89,7 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 	}
 	
 	public void addFlight(Flight flight) {
+		
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -111,12 +112,8 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 		return null;
 	}
 
-	public void deleteFlight(int id) {
-		PersistenceManager pm = pmf.getPersistenceManager();
-		//Object identity = pm.newObjectIdInstance(Flight.class, );
-		//Object obj = pm.getObjectById(identity);  // Retrieves the object to delete
-		//pm.deletePersistent(obj);
-		
+	public void deleteFlight(String atc) {
+		DbSos.deleteFlight(atc);
 	}
 
 	

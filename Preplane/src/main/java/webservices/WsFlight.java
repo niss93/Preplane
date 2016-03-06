@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -64,10 +65,16 @@ public class WsFlight {
 			@QueryParam("atc") String atc,
 			@QueryParam("status") String status, @QueryParam("status") String crew){
 		
-		Flight flight = new Flight(DateParser.StringToDate(date), arrival, departure,
+		Flight flight = new Flight(date, arrival, departure,
 				"test commercial", atc, notam, FlightStatus.valueOf(status), crew);
 		DAO.getFlightDao().addFlight(flight);
 		
 		}
-		
+	
+	@DELETE
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/flight/{atc}")
+	public void deleteFlight(@PathParam("atc") String atc){
+		DAO.getFlightDao().deleteFlight(atc);
+	}
 }
