@@ -9,7 +9,7 @@ body{
 #sign_in{
     background-color : white;
     height : 200px;
-    width : 300px;
+    width : 500px;
     border : black medium solid;
     border-radius : 10px;
 	position : relative;
@@ -27,11 +27,11 @@ p{
 }
 
 #forgot{
-    margin : 20px auto;
+	display : block;
+	position : absolute;
+    margin : 5px auto;
 }
 
 #sign{
-	display : block;
-	position : absolute;
-    margin : 0px 50px;
+    margin : 30px auto;
 }
