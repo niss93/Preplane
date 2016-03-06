@@ -112,8 +112,8 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 		return null;
 	}
 
-	public void deleteFlight(String atc) {
-		DbSos.deleteFlight(atc);
+	public void deleteFlight(String dh, String departure, String comno) {
+		DbSos.deleteFlight(dh, departure, comno);
 	}
 
 	

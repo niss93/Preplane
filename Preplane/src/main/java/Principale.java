@@ -1,5 +1,9 @@
+import java.awt.List;
+
+import buisnessobject.CrewStatus;
 import buisnessobject.Flight;
 import buisnessobject.FlightStatus;
+import buisnessobject.User;
 import dataaccess.DAO;
 import dataaccess.DbSos;
 import parsers.DateParser;
@@ -7,9 +11,9 @@ import parsers.DateParser;
 public class Principale {
 
 	public static void main(String[] args) {
-	
-DAO.getFlightDao().addFlight(new Flight("13/05/1992","Marseille",
-				"Rabat","atc1Z","atc43E","notam",FlightStatus.valueOf("ON_TIME"),"Dream team"));
+		System.out.println(DAO.getUserDao().checkLogin("atik", "12123").isTicket());
+
 	}
+	
 
 }

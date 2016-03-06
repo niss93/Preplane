@@ -10,6 +10,8 @@ public class Flight {
 	@Persistent
 	private String departureDate;
 	@Persistent
+    private String arrivalDate;
+	@Persistent
     private String departureAirport;
 	@Persistent
     private String arrivalAirport;
@@ -24,17 +26,19 @@ public class Flight {
 	@Persistent
     private FlightStatus Status;
 	
+	
     
-    public Flight(String departure, String arriv, String depart, String commercial, 
-    		String atc, String notam, FlightStatus status, String crew){
-    	this.departureDate=departure;
-    	this.setDepartureAirport(arriv);
-    	this.setArrivalAirport(depart);
+    public Flight(String ddate, String adate, String arrival, String departure, String commercial, 
+    		String atc,FlightStatus status, String crew){
+    	this.departureDate=ddate;
+    	this.setDepartureAirport(arrival);
+    	this.setArrivalAirport(departure);
     	this.commercialNumber=commercial;
     	this.atcNumber=atc;
-    	this.notamNumber=notam;
+    	this.notamNumber="NONE";
     	this.Status=status;
     	this.crew = crew;
+    	this.arrivalDate=adate;
     	
     }
     public String toString(){
@@ -89,5 +93,11 @@ public class Flight {
 	
 	public String getCrew(){
 		return this.crew;
+	}
+	public String getArrivalDate(){
+		return arrivalDate;
+	}
+	public void setArrivalDate(String date){
+		this.arrivalDate = date;
 	}
 }

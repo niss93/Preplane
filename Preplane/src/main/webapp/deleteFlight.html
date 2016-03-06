@@ -47,6 +47,14 @@
       <div class="col-md-3">
         <div class="row">
           <div class="col-md-12">
+
+            <div id ="user" class="col-md-12">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
           </div>
         </div>
         <div class="row">
@@ -54,29 +62,22 @@
             <div class="row">
               <div class="col-md-12">
 
-                <div id ="user" class="col-md-12">
-                </div>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
                 <button type="button" class="btn btn-link">
                   Load from Excel files
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
 
-            <a href="addFlight.html" type="button" class="btn btn-link">
-              Add flight <br/> <br/> <br/>
-            </a>
-            <a href="deleteFlight.html" type="button" class="btn btn-link">
-              Delete flight <br/> <br/> <br/>
-            </a>
+                <a href="addFlight.html" type="button" class="btn btn-link">
+                  Add flight <br/> <br/> <br/>
+                </a>
+                <a href="deleteFlight.html" type="button" class="btn btn-link">
+                  Delete flight <br/> <br/> <br/>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -112,7 +113,6 @@
                     <th>
                       Commercial no
                     </th>
-
                     <th>
                       Departure
                     </th>
@@ -125,25 +125,48 @@
                     <th>
                       Crew
                     </th>
-
                   </tr>
                 <div>
                 </thead>
                 <tbody id="listbody">
                 </tbody>
               </table>
+              <div class="col-md-9">
+                <div class="row">
+                  <div class="col-md-12">
+                    <form >
+                      <form >
+                      Departure:<br>
+                      <input type="text" id="departure">
+                      <br>
+                      Departure hour:<br>
+                      <input type="text" id="dh">
+                      <br>
 
+                      Commercial no:<br>
+                      <input type="text" id="comno">
+                      <br>
+                      <br>
+                      <button type="button" onclick="deleteFlight()">Delete flight</button>
+
+                    </form>
+                  </div>
+                </div>
+                <br/> <br/> <br/> <br/>
+              </div>
             </div>
           </div>
           <br/> <br/> <br/> <br/>
         </div>
-      </div>
+
     </div>
+  </div>
 
-    <script src="jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="getAllFlights.js"></script>
-    <script src="getUser.js"></script>
+  <script src="jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="getUser.js"></script>
+  <script src="deleteFlight.js"></script>
+  <script src="getAllFlights.js"></script>
 
-  </body>
-  </html>
+</body>
+</html>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import buisnessobject.CrewStatus;
 import buisnessobject.User;
+import buisnessobject.ValidationTicket;
 
 
 public interface UserDao {   
@@ -18,6 +19,8 @@ public interface UserDao {
 	 * @return
 	 */
 	List<User> getUserByid(int id);
+	List<User> getUserByName(String name);
+
 	/**
 	 * 
 	 * @param crewStatus
@@ -26,4 +29,5 @@ public interface UserDao {
 	List<User> getListByStatus(CrewStatus crewStatus);
 	
 	void addUser(User user);
+	public ValidationTicket checkLogin(String login, String pass);
 }

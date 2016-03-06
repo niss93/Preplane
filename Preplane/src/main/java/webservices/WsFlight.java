@@ -18,6 +18,7 @@ import buisnessobject.CrewStatus;
 import buisnessobject.Flight;
 import buisnessobject.FlightStatus;
 import buisnessobject.User;
+import buisnessobject.ValidationTicket;
 import dataaccess.DAO;
 import dataaccess.FlightConcreateDao;
 import parsers.DateParser;
@@ -55,26 +56,29 @@ public class WsFlight {
 		return DAO.getFlightDao().getFlightAtc(notam);
 	}
 	
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/flight")
-	public void addFlight(@QueryParam("depart") String departure,
-			@QueryParam("arriv") String arrival,
-			@QueryParam("date") String date,
-			@QueryParam("notam") String notam,
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/flight_a")
+	public ValidationTicket addFlight(@QueryParam("departure") String departure,
+			@QueryParam("arrival") String arrival,
+			@QueryParam("ddate") String ddate,
+			@QueryParam("comno") String comno,
 			@QueryParam("atc") String atc,
-			@QueryParam("status") String status, @QueryParam("status") String crew){
+			@QueryParam("status") String status, @QueryParam("crew") String crew,@QueryParam("arrivdate") String adate){
 		
-		Flight flight = new Flight(date, arrival, departure,
-				"test commercial", atc, notam, FlightStatus.valueOf(status), crew);
+		Flight flight = new Flight(ddate,adate,arrival,departure,comno,atc,FlightStatus.valueOf(status),crew);
 		DAO.getFlightDao().addFlight(flight);
-		
+		return new ValidationTicket(true);
 		}
 	
-	@DELETE
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/flight/{atc}")
-	public void deleteFlight(@PathParam("atc") String atc){
-		DAO.getFlightDao().deleteFlight(atc);
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/flight/{dh}/{departure}/{comno}")
+	public void deleteFlight(@PathParam("dh") String dh, 
+			@PathParam("comno") String comno,
+			@PathParam("departure") String departure){
+		dh = dh.substring(1);
+		System.out.println("comno :"+comno+" departure: "+departure+" dh: "+dh);
+		DAO.getFlightDao().deleteFlight(dh, departure, comno);
 	}
 }

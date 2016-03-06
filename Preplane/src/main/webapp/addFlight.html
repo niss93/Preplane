@@ -44,39 +44,44 @@
       </div>
     </div>
     <div class="row">
+
       <div class="col-md-3">
+
         <div class="row">
+
           <div class="col-md-12">
+
+            <div id ="user" class="col-md-12">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-12">
 
-                <div id ="user" class="col-md-12">
-                </div>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
                 <button type="button" class="btn btn-link">
                   Load from Excel files
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
 
-            <a href="addFlight.html" type="button" class="btn btn-link">
-              Add flight <br/> <br/> <br/>
-            </a>
-            <a href="deleteFlight.html" type="button" class="btn btn-link">
-              Delete flight <br/> <br/> <br/>
-            </a>
+                <a href="addFlight.html" type="button" class="btn btn-link">
+                  Add flight <br/> <br/> <br/>
+                </a>
+                <a href="deleteFlight.html" type="button" class="btn btn-link">
+                  Delete flight <br/> <br/> <br/>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -102,48 +107,47 @@
       </div>
       <div class="col-md-9">
         <div class="row">
-            <table class="table">
-              <thead>
-                <tr>
-                  <tr>
-                    <th>
-                      Departure time
-                    </th>
-                    <th>
-                      Commercial no
-                    </th>
+          <div class="col-md-12">
+            <form method="post">
+              <form method="post">
+              Departure:<br>
+              <input type="text" id="departure">
+              <br>
+              Arrival:<br>
+              <input type="text" id="arrival">
+              <br>
+              Departure hour:<br>
+              <input type="text" id="dh">
+              <br>
+              Arrival hour:<br>
+              <input type="text" id="ah">
+              <br>
+              ATC:<br>
+              <input type="text" id="atc">
+              <br>
+              Crew:<br>
+              <input type="text" id="crew">
+              <br>
+              Commercial no:<br>
+              <input type="text" id="comno">
+              <br>
+              Status:<br>
+              <input type="text" id="status">
+              <br>
+              <br>
+              <button type="button" onclick="sendFlight()" method="post">Add flight</button>
 
-                    <th>
-                      Departure
-                    </th>
-                    <th>
-                      Arrival
-                    </th>
-                    <th>
-                      Flight Status
-                    </th>
-                    <th>
-                      Crew
-                    </th>
-
-                  </tr>
-                <div>
-                </thead>
-                <tbody id="listbody">
-                </tbody>
-              </table>
-
-            </div>
+            </form>
           </div>
-          <br/> <br/> <br/> <br/>
         </div>
+        <br/> <br/> <br/> <br/>
       </div>
     </div>
+  </div>
 
-    <script src="jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="getAllFlights.js"></script>
-    <script src="getUser.js"></script>
-
-  </body>
-  </html>
+  <script src="jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="getUser.js"></script>
+  <script src="sendFlight.js"></script>
+</body>
+</html>

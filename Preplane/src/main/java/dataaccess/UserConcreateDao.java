@@ -19,6 +19,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import buisnessobject.CrewStatus;
 import buisnessobject.User;
+import buisnessobject.ValidationTicket;
 
 public class UserConcreateDao implements UserDao {
 	
@@ -105,6 +106,37 @@ public class UserConcreateDao implements UserDao {
 
 			actions = (List<User>) q.execute(id);
 			detached = (List<User>) pm.detachCopyAll(actions);
+
+			tx.commit();
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+		return detached;
+	}
+	public ValidationTicket checkLogin(String login, String pass) {
+		List<User> list = this.getUserByName(login);
+		User user = list.get(0);
+		System.out.println(user);
+		if(user.getPassword().equals(pass)) return new ValidationTicket(true);
+		return new ValidationTicket(false);
+	}
+	public List<User> getUserByName(String name) {
+		List<User> users = null;
+		List<User> detached = new ArrayList<User>();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try {
+			tx.begin();
+			Query q = pm.newQuery(User.class);
+			q.declareParameters("String firstname");
+			q.setFilter("firstname == name");
+
+			users = (List<User>) q.execute(name);
+			detached = (List<User>) pm.detachCopyAll(users);
 
 			tx.commit();
 		} finally {

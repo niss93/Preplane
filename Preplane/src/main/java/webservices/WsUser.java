@@ -13,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 import buisnessobject.CrewStatus;
 import buisnessobject.User;
+import buisnessobject.ValidationTicket;
 import dataaccess.DAO;
 @SuppressWarnings(value = { "unchecked" })
 
@@ -40,9 +41,9 @@ public class WsUser {
 		return (List<User>) DAO.getUserDao().getListByStatus(CrewStatus.valueOf(status));
 	}
 	
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/user")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/user_r")
 	public void addUser(@QueryParam("id") int id,
 			@QueryParam("name") String name,
 			@QueryParam("first") String firstname,
@@ -54,11 +55,11 @@ public class WsUser {
 		
 	}
 	@GET
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/user")
-	public boolean addUser(@QueryParam("mail") String mail,
-			@QueryParam("password") String pass){
-		return true;
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/user_v/{login}/{pass}")
+	public ValidationTicket validate(@PathParam("login") String login,
+			@PathParam("pass") String pass){
+		return DAO.getUserDao().checkLogin(login, pass);
 	}
 	
 	

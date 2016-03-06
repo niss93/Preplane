@@ -26,6 +26,12 @@
                   persistence-modifier="persistent"/>
         </class>
         <class
+              name="ValidationTicket">
+            <field
+                  name="ticket"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
               name="Airport">
             <field
                   name="id"
@@ -80,6 +86,9 @@
                   persistence-modifier="persistent"/>
             <field
                   name="Status"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="arrivalDate"
                   persistence-modifier="persistent"/>
         </class>
     </package>

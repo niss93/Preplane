@@ -11,7 +11,7 @@ public class DbSos {
    static final String USER = "root";
    static final String PASS = "";
    
-   public static void deleteFlight(String atc) {
+   public static void deleteFlight(String dh, String departure, String comno) {
    Connection conn = null;
    Statement stmt = null;
    try{
@@ -26,7 +26,10 @@ public class DbSos {
       System.out.println("Creating statement...");
       stmt = conn.createStatement();
       String sql;
-      sql = "delete FROM FLIGHT WHERE FLIGHT_ID = "+atc;
+      sql = "delete from FLIGHT where "
+      		+ "COMMERCIALNUMBER = '"+comno+"' and "
+      				+ "DEPARTUREAIRPORT = '"+departure+"' "
+      						+ "and DEPARTUREDATE = '"+dh+"' ;";
       stmt.executeUpdate(sql);
 
      

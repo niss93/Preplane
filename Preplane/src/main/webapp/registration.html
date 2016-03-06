@@ -22,21 +22,30 @@
 		</div>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
-				<h2>Log In</h2>
+				<h2>Registration</h2>
 			</div>
-			<label for="username">Username</label>
+			<label for="username">First name</label>
 			<br/>
-			<input type="text" id="username">
+			<input type="text" id="first">
 			<br/>
-			<label for="password">Password</label>
+			<label>Lastname</label>
 			<br/>
-			<input type="password" id="password">
+			<input type="text" id="last">
 			<br/>
-			<button type="submit" onclick="getNotification()">Sign In</button>
+      <label >Status</label>
 			<br/>
-			<a href="registration.html"><p class="small" >Registration</p></a>
+			<input type="text" id="status">
+			<br/>
+      <label for="password">password</label>
+			<br/>
+			<input type="password" id="pass">
+			<br/>
+			<button type="submit" onclick="getRegistred()">Sign up</button>
+			<br/>
 		</div>
 	</div>
+	<script src="registration.js"></script>
+
 </body>
 
 <script>
@@ -57,6 +66,5 @@
 		$('label[for="password"]').removeClass('selected');
 	});
 </script>
-<script src="sign.js"></script>
 
 </html>

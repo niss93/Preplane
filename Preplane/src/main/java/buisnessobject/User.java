@@ -31,7 +31,7 @@ public class User {
     	this.password=password;
     }
     public String toString(){
-    	return "id : "+this.id+", name: "+this.name+", firstname: "+this.firstName;
+    	return "id : "+this.id+", name: "+this.name+", firstname: "+this.firstName+" password:"+this.password;
     }
     public int getIdUser() {
 		return id;
@@ -67,6 +67,12 @@ public class User {
     	if(this.crewStatus == CrewStatus.OCC) {
     		// addition allowed for OCC members only
     	}
+    }
+    public String getPassword(){
+    	return password;
+    }
+    public void setPassword(String pass ){
+    	this.password = pass;
     }
 
 }
