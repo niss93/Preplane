@@ -9,7 +9,9 @@ function getNotification()
   .done(function( data ) {
     console.log( "Got data", data ); // mettre tout le temps !!!
     if(data.ticket == true){
-      window.location = "http://localhost:8080/occ.html";
+      if(document.getElementById("password").value == "OCC"){
+        window.location = "http://localhost:8080/occ.html";
+      }
     }
     if(data.ticket == false)
     {
