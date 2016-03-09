@@ -32,10 +32,8 @@ public class UserConcreateDao implements UserDao {
 	}
 	
 	public List<User> getList() {
-		User user = new User(1,"atik","lahiyane",CrewStatus.OCC, "123123");
-		List<User> list = new ArrayList<User>();
-		list.add(user);
-		return list;
+		
+		return null;
 	}
 
 	

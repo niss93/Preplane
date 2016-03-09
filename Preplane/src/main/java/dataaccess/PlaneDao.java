@@ -26,6 +26,12 @@ public interface PlaneDao {
 	void addPlane(Plane p);
 	void delete (Plane plane);
 	void update (int id,String planeModel,int planeCapacity);
+	/**
+	 * Return the plane of corresponding id
+	 * @param idPlane
+	 * @return
+	 */
+	Plane getPlane(int idPlane);
 	
 	
 }

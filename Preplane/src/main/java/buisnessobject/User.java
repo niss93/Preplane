@@ -12,21 +12,29 @@ public class User {
     private int id;
 	
 	@Persistent
-    private String name;
-    
+	private String username;
+	
 	@Persistent
+    private String name;
+	
+    @Persistent
 	private String firstName;
     
+	@Persistent
+	private Crew myCrew;
+	
 	@Persistent
 	private CrewStatus crewStatus;
     
 	@Persistent
 	private String password;
 
-    public User(int id, String name, String firstname,CrewStatus crew, String password){
+    public User(int id, String username, String name, String firstname,Crew myCrew, CrewStatus crew, String password){
     	this.id = id;
+    	this.username=username;
     	this.name = name;
     	this.firstName = firstname;
+    	this.myCrew=myCrew;
     	this.crewStatus= crew;
     	this.password=password;
     }
@@ -38,6 +46,19 @@ public class User {
 	}
 	public void setIdUser(int idUser) {
 		this.id = idUser;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public Crew getMyCrew() {
+		return myCrew;
+	}
+	public void setMyCrew(Crew myCrew) {
+		this.myCrew = myCrew;
 	}
 	public String getName() {
 		return name;
