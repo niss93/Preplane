@@ -57,6 +57,7 @@
 			<version>9.2.14.v20151106</version>
 		</dependency>
 
+
 		<!-- Jersey -->
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
@@ -69,7 +70,12 @@
 			<version>2.3</version>
 		</dependency>
 
-
+		<!-- Excel -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.14</version>
+		   </dependency>
 
            	<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
