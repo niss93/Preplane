@@ -5,22 +5,17 @@ import javax.jdo.annotations.PersistenceCapable;
 @PersistenceCapable
 
 public class Airport {
-	private int id;
+	private String codeOACI;
     private String country;
     private String city;
     
-    public Airport(int id,String country,String city){
-    	this.id=id;
+    public Airport(String OACI,String country,String city){
+    	this.setCodeOACI(OACI);
     	this.country=country;
     	this.city=city;
     	System.out.println("haha");
     }
-	public int getIdAirport() {
-		return id;
-	}
-	public void setIdAirport(int idAirport) {
-		this.id = idAirport;
-	}
+
 	public String getCountry() {
 		return country;
 	}
@@ -32,6 +27,14 @@ public class Airport {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+	public String getCodeOACI() {
+		return codeOACI;
+	}
+
+	public void setCodeOACI(String codeOACI) {
+		this.codeOACI = codeOACI;
 	}
 }
 

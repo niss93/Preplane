@@ -11,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import buisnessobject.Crew;
 import buisnessobject.CrewStatus;
 import buisnessobject.User;
 import buisnessobject.ValidationTicket;
@@ -45,12 +46,14 @@ public class WsUser {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/user_r")
 	public void addUser(@QueryParam("id") int id,
+			@QueryParam("username")String username,
 			@QueryParam("name") String name,
 			@QueryParam("first") String firstname,
+			@QueryParam("crew") String crew,
 			@QueryParam("status") String status,
 			@QueryParam("password") String password){
-		
-		User user = new User(id, name, firstname, CrewStatus.valueOf(status), password);
+		Crew myCrew = DAO.getCrewDao().getCrew(crew);
+		User user = new User(id, username, name, firstname,myCrew, CrewStatus.valueOf(status), password);
 		DAO.getUserDao().addUser(user);
 		
 	}

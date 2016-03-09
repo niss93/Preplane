@@ -14,9 +14,11 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import buisnessobject.Airport;
+import buisnessobject.Crew;
 import buisnessobject.CrewStatus;
 import buisnessobject.Flight;
 import buisnessobject.FlightStatus;
+import buisnessobject.Plane;
 import buisnessobject.User;
 import buisnessobject.ValidationTicket;
 import dataaccess.DAO;
@@ -64,9 +66,11 @@ public class WsFlight {
 			@QueryParam("ddate") String ddate,
 			@QueryParam("comno") String comno,
 			@QueryParam("atc") String atc,
-			@QueryParam("status") String status, @QueryParam("crew") String crew,@QueryParam("arrivdate") String adate){
-		
-		Flight flight = new Flight(ddate,adate,arrival,departure,comno,atc,FlightStatus.valueOf(status),crew);
+			@QueryParam("status") String status, @QueryParam("crew") String crewName,@QueryParam("arrivdate") String adate,
+			@QueryParam("plane")int idPlane){
+		Crew crew = DAO.getCrewDao().getCrew(crewName);
+		Plane plane=DAO.getPlaneDao().getPlane(idPlane);
+		Flight flight = new Flight(ddate,adate,arrival,departure,comno,atc,FlightStatus.valueOf(status),crew, plane);
 		DAO.getFlightDao().addFlight(flight);
 		return new ValidationTicket(true);
 		}

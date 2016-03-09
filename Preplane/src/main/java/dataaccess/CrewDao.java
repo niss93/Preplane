@@ -19,5 +19,10 @@ public interface CrewDao {
 	 * @return
 	 */
 	Crew getCrewList(String atc);
-
+	/**
+	 * Return the crew of corresponding name
+	 * @param name
+	 * @return
+	 */
+	Crew getCrew(String name);
 }
