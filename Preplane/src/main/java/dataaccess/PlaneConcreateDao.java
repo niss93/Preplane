@@ -111,6 +111,11 @@ public class PlaneConcreateDao implements PlaneDao  {
 		
 	}
 
+	public Plane getPlane(int idPlane) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 

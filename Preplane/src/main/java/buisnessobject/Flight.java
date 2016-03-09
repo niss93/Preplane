@@ -18,7 +18,9 @@ public class Flight {
 	@Persistent
     private String commercialNumber;
 	@Persistent
-	private String crew;
+	private Crew crew;
+	@Persistent
+	private Plane plane;
 	@Persistent
     private String atcNumber;
 	@Persistent
@@ -29,7 +31,7 @@ public class Flight {
 	
     
     public Flight(String ddate, String adate, String arrival, String departure, String commercial, 
-    		String atc,FlightStatus status, String crew){
+    		String atc,FlightStatus status, Crew crew, Plane plane){
     	this.departureDate=ddate;
     	this.setDepartureAirport(arrival);
     	this.setArrivalAirport(departure);
@@ -38,6 +40,7 @@ public class Flight {
     	this.notamNumber="NONE";
     	this.Status=status;
     	this.crew = crew;
+    	this.plane=plane;
     	this.arrivalDate=adate;
     	
     }
@@ -91,7 +94,7 @@ public class Flight {
 		this.arrivalAirport = arrivalAirport;
 	}
 	
-	public String getCrew(){
+	public Crew getCrew(){
 		return this.crew;
 	}
 	public String getArrivalDate(){

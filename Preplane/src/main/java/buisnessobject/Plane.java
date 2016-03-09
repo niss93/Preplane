@@ -6,6 +6,7 @@ import javax.jdo.annotations.PersistenceCapable;
 
 public class Plane {
 	private int id;
+	private Airport airport;
 	private String planeModel;
     private int planeCapacity;
     
@@ -26,5 +27,11 @@ public class Plane {
 	}
 	public void setPlaneCapacity(int planeCapacity) {
 		this.planeCapacity = planeCapacity;
+	}
+	public Airport getAirport() {
+		return airport;
+	}
+	public void setAirport(Airport airport) {
+		this.airport = airport;
 	}
 }
