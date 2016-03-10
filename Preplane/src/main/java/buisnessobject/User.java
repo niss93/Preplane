@@ -1,5 +1,7 @@
 package buisnessobject;
 
+import java.util.Date;
+
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -28,6 +30,9 @@ public class User {
     
 	@Persistent
 	private String password;
+	
+	@Persistent
+	private String email;
 
     public User(int id, String username, String name, String firstname,Crew myCrew, CrewStatus crew, String password){
     	this.id = id;
@@ -38,7 +43,10 @@ public class User {
     	this.crewStatus= crew;
     	this.password=password;
     }
-    public String toString(){
+    public User(String string, String string2, Date date) {
+		// TODO Auto-generated constructor stub
+	}
+	public String toString(){
     	return "id : "+this.id+", name: "+this.name+", firstname: "+this.firstName+" password:"+this.password;
     }
     public int getIdUser() {
@@ -95,6 +103,9 @@ public class User {
     public void setPassword(String pass ){
     	this.password = pass;
     }
+	public String getEmail() {
+		return email;
+	}
 
 }
 	
