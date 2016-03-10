@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: blue;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: white}
+
+.button:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+<head>
+  <title>OCC Page</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <img src="Plane.JPG">
+        <br>
+        <a href="occ.html" class="button" type = "button">
+          Dashbord
+        </a>        <br/> <br/> <br/>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-3">
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div id ="user" class="col-md-12">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
+
+                <button type="button" class="btn btn-link">
+                  Load from Excel files
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+
+                <a href="addFlight.html" type="button" class="btn btn-link">
+                  Add flight <br/> <br/> <br/>
+                </a>
+                <a href="deleteFlight.html" type="button" class="btn btn-link">
+                  Delete flight <br/> <br/> <br/>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
+
+                <button type="button" class="btn btn-link">
+                  Account & Settings
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+
+                <a href="signin.html" type="button" class="btn btn-link">
+                  Sign out <br/> <br/> <br/>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-12">
+	    <a href="weatherTest.pdf">Weather information (PDF)</a>
+	    <br> <br/>
+            <form method="post">
+              <form method="post">
+              Departure:<br>
+              <input type="text" id="departure">
+              <br>
+              Arrival:<br>
+              <input type="text" id="arrival">
+              <br>
+              Departure hour:<br>
+              <input type="text" id="dh">
+              <br>
+              Arrival hour:<br>
+              <input type="text" id="ah">
+              <br>
+              ATC:<br>
+              <input type="text" id="atc">
+              <br>
+              Crew:<br>
+              <input type="text" id="crew">
+              <br>
+              Commercial no:<br>
+              <input type="text" id="comno">
+              <br>
+              Status:<br>
+              <input type="text" id="status">
+              <br>
+              <br>
+              <button type="button" onclick="deleteFlight()" method="post">Delete flight</button>
+
+            </form>
+          </div>
+        </div>
+        <br/> <br/> <br/> <br/>
+      </div>
+    </div>
+  </div>
+
+  <script src="jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="getUser.js"></script>
+  <script src="deleteFlight.js"></script>
+</body>
+</html>
