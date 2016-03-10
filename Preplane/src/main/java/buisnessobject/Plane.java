@@ -10,6 +10,17 @@ public class Plane {
 	private String planeModel;
     private int planeCapacity;
     
+    public Plane(){
+    	
+    }
+
+	public Plane(int id, Airport arpt, String model, int capacity){
+    	this.id = id;
+    	this.airport = arpt;
+    	this.planeModel = model;
+    	this.planeCapacity = capacity;
+    }
+    
 	public int getIdPlane() {
 		return id;
 	}
