@@ -3,20 +3,14 @@ package parsers;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import buisnessobject.Airport;
 import buisnessobject.Crew;
 import buisnessobject.Flight;
 import buisnessobject.FlightStatus;
@@ -52,13 +46,14 @@ public final class ExcelParser {
 
 				row = sheet.getRow(index++);
 			}
+			workbook.close();
 			file.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(flightsList.get(0).getArrivalAirport());
+		// System.out.println(flightsList.get(2).getArrivalAirport());
 		return flightsList;
 	}
 
@@ -96,8 +91,7 @@ public final class ExcelParser {
 		return flight;
 	}
 
-	public static void main(String[] args) {
-		creatFlightsFromXLSFile(
-				"C:\\Users\\Abdou\\git\\Preplane\\Preplane\\src\\main\\webapp\\ExcelFiles\\flights.xlsx");
-	}
+//	public static void main(String[] args) {
+//		creatFlightsFromXLSFile("the path of the xls file");
+//	}
 }

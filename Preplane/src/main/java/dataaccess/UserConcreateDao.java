@@ -92,7 +92,7 @@ public class UserConcreateDao implements UserDao {
 		return detached;
 	}
 
-	@SuppressWarnings("unchecked")
+//	@SuppressWarnings("unchecked")
 
 	public List<User> getUserByid(int id) {
 		List<User> actions = new ArrayList<User>();
@@ -106,7 +106,7 @@ public class UserConcreateDao implements UserDao {
 			Query q = pm.newQuery(User.class);
 			q.declareParameters("int id1");
 			q.setFilter("id1 == id");
-
+			
 			actions = (List<User>) q.execute(id);
 			detached = (List<User>) pm.detachCopyAll(actions);
 
