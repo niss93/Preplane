@@ -3,6 +3,7 @@ package dataaccess;
 
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
@@ -12,7 +13,7 @@ import buisnessobject.Plane;
 
 public class PlaneConcreateDao implements PlaneDao  {
 
-	private PersistenceManagerFactory pmf;
+	private PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");;
 
 	public PlaneConcreateDao(PersistenceManagerFactory pmf) {
 		this.pmf = pmf;

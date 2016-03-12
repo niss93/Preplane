@@ -54,7 +54,6 @@ public class JettyMain {
 
 		// Start server
 		server.start();
-
 	}
 
 }

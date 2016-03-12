@@ -22,23 +22,24 @@ import buisnessobject.User;
 import buisnessobject.ValidationTicket;
 
 public class UserConcreateDao implements UserDao {
-	
-	private PersistenceManagerFactory pmf;
+
+	private PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 	public UserConcreateDao(PersistenceManagerFactory pmf) {
 	}
-	public UserConcreateDao(){
-		
+
+	public UserConcreateDao() {
+
 	}
-	
+
 	public List<User> getList() {
-		
+
 		return null;
 	}
 
-	
-	public void addUser(User user){
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+	public void addUser(User user) {
+		// PersistenceManagerFactory pmf =
+		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -55,20 +56,23 @@ public class UserConcreateDao implements UserDao {
 		}
 		System.out.println("User added with success");
 	}
+
 	public User getListByid(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public List<User> getListByStatus(CrewStatus status) {
-		
-		List<User> actions = null;
-		
+
+		List<User> actions = new ArrayList<User>();
+
 		List<User> detached = new ArrayList<User>();
-		
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+
+		// PersistenceManagerFactory pmf =
+		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		
+
 		try {
 			tx.begin();
 			Query q = pm.newQuery(User.class);
@@ -87,13 +91,14 @@ public class UserConcreateDao implements UserDao {
 		}
 		return detached;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 
 	public List<User> getUserByid(int id) {
-		List<User> actions = null;
+		List<User> actions = new ArrayList<User>();
 		List<User> detached = new ArrayList<User>();
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		// PersistenceManagerFactory pmf =
+		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -114,17 +119,21 @@ public class UserConcreateDao implements UserDao {
 		}
 		return detached;
 	}
+
 	public ValidationTicket checkLogin(String login, String pass) {
 		List<User> list = this.getUserByName(login);
 		User user = list.get(0);
 		System.out.println(user);
-		if(user.getPassword().equals(pass)) return new ValidationTicket(true);
+		if (user.getPassword().equals(pass))
+			return new ValidationTicket(true);
 		return new ValidationTicket(false);
 	}
+
 	public List<User> getUserByName(String name) {
-		List<User> users = null;
+		List<User> users = new ArrayList<User>();
 		List<User> detached = new ArrayList<User>();
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		// PersistenceManagerFactory pmf =
+		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
@@ -132,8 +141,8 @@ public class UserConcreateDao implements UserDao {
 			Query q = pm.newQuery(User.class);
 			q.declareParameters("String firstname");
 			q.setFilter("firstname == name");
-
-			users = (List<User>) q.execute(name);
+			users.add((User) q.execute(name));
+			// users = (List<User>) q.execute(name);
 			detached = (List<User>) pm.detachCopyAll(users);
 
 			tx.commit();

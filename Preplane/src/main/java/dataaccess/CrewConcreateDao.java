@@ -7,7 +7,6 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
 import buisnessobject.Crew;
-import buisnessobject.Flight;
 
 
 public class CrewConcreateDao implements CrewDao {

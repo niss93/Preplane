@@ -1,7 +1,5 @@
 package buisnessobject;
 
-import java.util.Date;
-
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
