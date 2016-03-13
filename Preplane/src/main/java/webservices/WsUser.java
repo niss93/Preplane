@@ -16,7 +16,7 @@ import buisnessobject.CrewStatus;
 import buisnessobject.User;
 import buisnessobject.ValidationTicket;
 import dataaccess.DAO;
-@SuppressWarnings(value = { "unchecked" })
+@SuppressWarnings(value = { })
 
 @Path("/preplane")
 public class WsUser {

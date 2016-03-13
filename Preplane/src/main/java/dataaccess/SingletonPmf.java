@@ -7,7 +7,7 @@ public class SingletonPmf {
 	private static PersistenceManagerFactory pmf;
 	
 	private SingletonPmf(){
-		this.pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 	public static PersistenceManagerFactory getPmf(){
 		if(pmf == null) return (PersistenceManagerFactory) new SingletonPmf();
