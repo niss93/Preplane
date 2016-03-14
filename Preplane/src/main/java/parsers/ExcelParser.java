@@ -53,7 +53,7 @@ public final class ExcelParser {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// System.out.println(flightsList.get(2).getArrivalAirport());
+		 System.out.println(flightsList.get(0).getArrivalAirport());
 		return flightsList;
 	}
 
@@ -91,7 +91,8 @@ public final class ExcelParser {
 		return flight;
 	}
 
-//	public static void main(String[] args) {
-//		creatFlightsFromXLSFile("the path of the xls file");
-//	}
+	public static void main(String[] args) {
+		creatFlightsFromXLSFile("/home/netbook/git/Preplane/Preplane/src/main/webapp/ExcelFiles/flights.xlsx");
+		
+	}
 }
