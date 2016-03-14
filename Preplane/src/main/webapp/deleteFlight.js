@@ -5,12 +5,12 @@ function deleteFlight(){
   var comno = document.getElementById("comno").value
  
   $.ajax({
-    url: "http://localhost:8080/ws/preplane/flight/+"+dh+"/"+dep+"/"+comno,
+    url: "http://localhost:9090/ws/preplane/flight/+"+dh+"/"+dep+"/"+comno,
     Type : "GET"
   })
   .done(function( data ) {
     console.log( "Got data", data );
     alert("Flight deleted successfully")
-    window.location = "http://localhost:8080/occ.html";
+    window.location = "http://localhost:9090/occ.html";
   });
 }

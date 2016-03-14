@@ -1,6 +1,6 @@
   var name = sessionStorage.myName;
   $.ajax({
-    url: "http://localhost:8080/ws/preplane/user_n/dupont/",
+    url: "http://localhost:9090/ws/preplane/user_n/dupont/",
     dataType: "json",
     Type : "GET"
   })
