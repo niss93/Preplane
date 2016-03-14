@@ -7,7 +7,7 @@ function getRegistred(){
 
 
   $.ajax({
-    url: "http://localhost:8080/ws/preplane/user_r?id="+id+
+    url: "http://localhost:9090/ws/preplane/user_r?id="+id+
     "&first="+first+
     "&name="+last+
     "&status="+status+
@@ -19,6 +19,6 @@ function getRegistred(){
   .done(function( data ) { console.log( "Got data", data );
 
     alert("You're registred successfully")
-    window.location = "http://localhost:8080/signin.html";
+    window.location = "http://localhost:9090/signin.html";
   });
 }

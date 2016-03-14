@@ -1,5 +1,5 @@
 $.ajax({
-  url: "http://localhost:8080/ws/preplane/flight",
+  url: "http://localhost:9090/ws/preplane/flight",
   dataType: "json",
   Type : "GET"
 })

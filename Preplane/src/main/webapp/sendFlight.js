@@ -9,7 +9,7 @@ function sendFlight(){
   var status = document.getElementById("status").value
 
   $.ajax({
-    url: "http://localhost:8080/ws/preplane/flight_a?departure="+dep+
+    url: "http://localhost:9090/ws/preplane/flight_a?departure="+dep+
     "&arrival="+arriv+
     "&ddate="+dh+
     "&comno="+comno+
@@ -22,6 +22,6 @@ function sendFlight(){
   })
   .done(function( data ) { console.log( "Got data", data );
     alert("Flight added successfully")
-    window.location = "http://localhost:8080/occ.html";
+    window.location = "http://localhost:9090/occ.html";
   });
 }
