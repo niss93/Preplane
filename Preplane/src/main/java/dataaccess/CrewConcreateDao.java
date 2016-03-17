@@ -2,21 +2,21 @@ package dataaccess;
 
 import java.util.List;
 
-import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
 import buisnessobject.Crew;
 
-
 public class CrewConcreateDao implements CrewDao {
 
-	private PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+	// private PersistenceManagerFactory pmf =
+	// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 	public CrewConcreateDao(PersistenceManagerFactory pmf) {
-		this.pmf = pmf;
+		// this.pmf = pmf;
 	}
+
 	public List<Crew> getCrewList() {
 		// TODO Auto-gevc cnerated method stub
 		return null;
@@ -26,9 +26,9 @@ public class CrewConcreateDao implements CrewDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public void addCrew(Crew crewh){
-		PersistenceManager pm = pmf.getPersistenceManager();
+
+	public void addCrew(Crew crewh) {
+		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
@@ -43,6 +43,7 @@ public class CrewConcreateDao implements CrewDao {
 			pm.close();
 		}
 	}
+
 	public Crew getCrew(String name) {
 		// TODO Auto-generated method stub
 		return null;

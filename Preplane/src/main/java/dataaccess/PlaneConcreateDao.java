@@ -1,9 +1,7 @@
 package dataaccess;
 
-
 import java.util.List;
 
-import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
@@ -11,14 +9,15 @@ import javax.jdo.annotations.Query;
 
 import buisnessobject.Plane;
 
-public class PlaneConcreateDao implements PlaneDao  {
+public class PlaneConcreateDao implements PlaneDao {
 
-	private PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");;
+	// private PersistenceManagerFactory pmf =
+	// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");;
 
 	public PlaneConcreateDao(PersistenceManagerFactory pmf) {
-		this.pmf = pmf;
+		// this.pmf = pmf;
 	}
-	
+
 	public List<Plane> getPlanes() {
 		// TODO Auto-generated method stub
 		return null;
@@ -33,9 +32,9 @@ public class PlaneConcreateDao implements PlaneDao  {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public void addPlane(Plane plane){
-		PersistenceManager pm = pmf.getPersistenceManager();
+
+	public void addPlane(Plane plane) {
+		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
@@ -51,75 +50,58 @@ public class PlaneConcreateDao implements PlaneDao  {
 		}
 	}
 
-	
-	
-
 	public void delete(Plane plane) {
 		// TODO Auto-generated method stub
-		PersistenceManager pm = pmf.getPersistenceManager();
+		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		try
-		{
-		    tx = pm.currentTransaction();
-		    tx.begin();
+		try {
+			tx = pm.currentTransaction();
+			tx.begin();
 
-		    pm.deletePersistent(plane);
+			pm.deletePersistent(plane);
 
-		    tx.commit();
+			tx.commit();
+		} finally {
+
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
 		}
-		finally {
-			
-		    if (tx.isActive())
-		    {
-		        tx.rollback();
-		    }
-		    pm.close();
-		}
-		
+
 	}
 
 	public void update(int id, String planeModel, int planeCapacity) {
 		// TODO Auto-generated method stub
-		
-		
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		
-		try
-		{
-		    tx.begin();
 
-			//Plane p = getPlanes(id);
-		    Query q = (Query) pm.newQuery(Plane.class);
+		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+
+			// Plane p = getPlanes(id);
+			Query q = (Query) pm.newQuery(Plane.class);
 			((javax.jdo.Query) q).declareParameters("int idPlane");
 			((javax.jdo.Query) q).setFilter("id == idPlane");
 
 			Plane p = (Plane) ((javax.jdo.Query) q).execute(id);
-	        p.setPlaneModel(planeModel); 
-	        p.setPlaneCapacity(planeCapacity);
+			p.setPlaneModel(planeModel);
+			p.setPlaneCapacity(planeCapacity);
 
-		    tx.commit();
+			tx.commit();
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
 		}
-		finally
-		{
-		    if (tx.isActive())
-		    {
-		        tx.rollback();
-		    }
-		    pm.close();
-		}
-	
-		
+
 	}
 
 	public Plane getPlane(int idPlane) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-	
-
-
 
 }
