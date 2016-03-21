@@ -9,7 +9,7 @@ public class TestAlert {
  public static void main(String[] args)
  {
   @SuppressWarnings("unused")
-ApplicationContext alert = new ClassPathXmlApplicationContext("Alert.xml"); 
+  ApplicationContext alert = new ClassPathXmlApplicationContext("Alert.xml"); 
  }
  
 }
