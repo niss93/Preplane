@@ -2,6 +2,7 @@ package dataaccess;
 
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
@@ -34,7 +35,8 @@ public class PlaneConcreateDao implements PlaneDao {
 	}
 
 	public void addPlane(Plane plane) {
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
@@ -52,7 +54,8 @@ public class PlaneConcreateDao implements PlaneDao {
 
 	public void delete(Plane plane) {
 		// TODO Auto-generated method stub
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx = pm.currentTransaction();
@@ -74,7 +77,8 @@ public class PlaneConcreateDao implements PlaneDao {
 	public void update(int id, String planeModel, int planeCapacity) {
 		// TODO Auto-generated method stub
 
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
 		try {

@@ -2,6 +2,7 @@ package dataaccess;
 
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
@@ -28,7 +29,8 @@ public class CrewConcreateDao implements CrewDao {
 	}
 
 	public void addCrew(Crew crewh) {
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();		
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
