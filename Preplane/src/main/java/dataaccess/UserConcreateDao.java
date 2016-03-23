@@ -3,6 +3,7 @@ package dataaccess;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
@@ -32,7 +33,8 @@ public class UserConcreateDao implements UserDao {
 	public void addUser(User user) {
 		// PersistenceManagerFactory pmf =
 		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
@@ -62,7 +64,8 @@ public class UserConcreateDao implements UserDao {
 
 		// PersistenceManagerFactory pmf =
 		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
 		try {
@@ -91,7 +94,8 @@ public class UserConcreateDao implements UserDao {
 		List<User> detached = new ArrayList<User>();
 		// PersistenceManagerFactory pmf =
 		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
@@ -126,7 +130,8 @@ public class UserConcreateDao implements UserDao {
 		List<User> detached = new ArrayList<User>();
 		// PersistenceManagerFactory pmf =
 		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();

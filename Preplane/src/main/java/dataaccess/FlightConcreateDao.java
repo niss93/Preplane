@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
@@ -35,9 +36,8 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 
 	public List<Flight> getFlight() {
 
-		// PersistenceManagerFactory pmf =
-		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
 		try {
@@ -92,7 +92,8 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 
 	public void addFlight(Flight flight) {
 
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
@@ -115,7 +116,8 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 	}
 
 	public void addListOfFlight(List<Flight> flights) {
-		PersistenceManager pm = SingletonPmf.pmf.getPersistenceManager();
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();

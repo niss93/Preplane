@@ -58,16 +58,14 @@ public class WsUser {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/user_v/{login}/{pass}")
-	public ValidationTicket validate(@PathParam("login") String login,
-			@PathParam("pass") String pass){
-		System.out.println("login "+login+" pass "+pass);
+	public ValidationTicket validate(@PathParam("login") String login,@PathParam("pass") String pass){
 		return DAO.getUserDao().checkLogin(login, pass);
 	}
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/user_n/{name}")
 	public User validate(@PathParam("name") String name){
-		return DAO.getUserDao().getUserByName(name).get(0);
+		return DAO.getUserDao().getUserByName(name).get(0); //
 	}
 	
 	
