@@ -26,7 +26,6 @@ public class UserConcreateDao implements UserDao {
 	}
 
 	public List<User> getList() {
-
 		return null;
 	}
 
@@ -38,7 +37,6 @@ public class UserConcreateDao implements UserDao {
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
-
 			pm.makePersistent(user);
 
 			tx.commit();
@@ -139,7 +137,7 @@ public class UserConcreateDao implements UserDao {
 			q.declareParameters("String firstname");
 			q.setFilter("firstname == name");
 			users.add((User) q.execute(name));
-			// users = (List<User>) q.execute(name);
+		//	users = (List<User>) q.execute(name);
 			detached = (List<User>) pm.detachCopyAll(users);
 
 			tx.commit();

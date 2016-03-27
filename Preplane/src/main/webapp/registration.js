@@ -1,4 +1,5 @@
 function getRegistred(){
+  var user = document.getElementById("user").value
   var first = document.getElementById("first").value
   var last = document.getElementById("last").value
   var pass =  document.getElementById("pass").value
@@ -8,8 +9,9 @@ function getRegistred(){
 
   $.ajax({
     url: "http://localhost:9090/ws/preplane/user_r?id="+id+
-    "&first="+first+
+    "&user="+user+
     "&name="+last+
+    "&first="+first+
     "&status="+status+
     "&password="+pass,
 

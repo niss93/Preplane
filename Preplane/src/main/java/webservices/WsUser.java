@@ -47,11 +47,11 @@ public class WsUser {
 			@QueryParam("username")String username,
 			@QueryParam("name") String name,
 			@QueryParam("first") String firstname,
-			@QueryParam("crew") String crew,
+			// @QueryParam("crew") String crew,
 			@QueryParam("status") String status,
 			@QueryParam("password") String password){
-		Crew myCrew = DAO.getCrewDao().getCrew(crew);
-		User user = new User(id, username, name, firstname,myCrew, CrewStatus.valueOf(status), password);
+	//	Crew myCrew = DAO.getCrewDao().getCrew(crew);
+		User user = new User(id, username, name, firstname/*,myCrew*/, CrewStatus.valueOf(status), password);
 		DAO.getUserDao().addUser(user);
 		
 	}
@@ -67,9 +67,5 @@ public class WsUser {
 	public User validate(@PathParam("name") String name){
 		return DAO.getUserDao().getUserByName(name).get(0); //
 	}
-	
-	
-	
-	
 
 }

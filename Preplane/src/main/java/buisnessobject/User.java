@@ -22,8 +22,8 @@ public class User {
 	@Persistent
 	private String firstName;
 
-	@Persistent
-	private Crew myCrew;
+/*	@Persistent
+	private Crew myCrew; */
 
 	@Persistent
 	private CrewStatus crewStatus;
@@ -34,12 +34,12 @@ public class User {
 	@Persistent
 	private String email;
 
-	public User(int id, String username, String name, String firstname, Crew myCrew, CrewStatus crew, String password) {
+	public User(int id, String username, String name, String firstname, /*Crew myCrew,*/ CrewStatus crew, String password) {
 		this.id = id;
 		this.username = username;
 		this.name = name;
 		this.firstName = firstname;
-		this.myCrew = myCrew;
+	//	this.myCrew = myCrew;
 		this.crewStatus = crew;
 		this.password = password;
 	}
@@ -49,7 +49,7 @@ public class User {
 	}
 
 	public String toString() {
-		return "id : " + this.id + ", name: " + this.name + ", firstname: " + this.firstName + " password:"
+		return "id: " + this.id + ", user.name: " + this.username + ", name: " + this.name + ", firstname: " + this.firstName + ", password:"
 				+ this.password;
 	}
 
@@ -69,13 +69,13 @@ public class User {
 		this.username = username;
 	}
 
-	public Crew getMyCrew() {
+	/*public Crew getMyCrew() {
 		return myCrew;
 	}
 
 	public void setMyCrew(Crew myCrew) {
 		this.myCrew = myCrew;
-	}
+	} */
 
 	public String getName() {
 		return name;
