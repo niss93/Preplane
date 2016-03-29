@@ -1,9 +1,0 @@
-javax.jdo.PersistenceManagerFactoryClass=org.datanucleus.api.jdo.JDOPersistenceManagerFactory
-javax.jdo.option.ConnectionDriverName=com.mysql.jdbc.Driver
-javax.jdo.option.ConnectionURL=jdbc:mysql://localhost/aircraft
-javax.jdo.option.ConnectionUserName=root
-javax.jdo.option.ConnectionPassword=amablk
-datanucleus.autoCreateSchema=true
-datanucleus.validateTables=false
-datanucleus.validateConstraints=false
-datanucleus.storeManagerType=rdbms

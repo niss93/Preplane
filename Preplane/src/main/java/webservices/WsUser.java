@@ -65,7 +65,7 @@ public class WsUser {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/user_n/{name}")
 	public User validate(@PathParam("name") String name){
-		return DAO.getUserDao().getUserByName(name).get(0); //
+		return DAO.getUserDao().getUserByName(name).get(0); 
 	}
 	
 	

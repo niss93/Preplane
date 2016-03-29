@@ -15,9 +15,6 @@ import buisnessobject.ValidationTicket;
 
 public class UserConcreateDao implements UserDao {
 
-	// private PersistenceManagerFactory pmf =
-	// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-
 	public UserConcreateDao(PersistenceManagerFactory pmf) {
 	}
 
@@ -31,8 +28,7 @@ public class UserConcreateDao implements UserDao {
 	}
 
 	public void addUser(User user) {
-		// PersistenceManagerFactory pmf =
-		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+	
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -61,9 +57,6 @@ public class UserConcreateDao implements UserDao {
 		List<User> actions = new ArrayList<User>();
 
 		List<User> detached = new ArrayList<User>();
-
-		// PersistenceManagerFactory pmf =
-		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -92,8 +85,6 @@ public class UserConcreateDao implements UserDao {
 	public List<User> getUserByid(int id) {
 		List<User> actions = new ArrayList<User>();
 		List<User> detached = new ArrayList<User>();
-		// PersistenceManagerFactory pmf =
-		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -128,8 +119,6 @@ public class UserConcreateDao implements UserDao {
 	public List<User> getUserByName(String name) {
 		List<User> users = new ArrayList<User>();
 		List<User> detached = new ArrayList<User>();
-		// PersistenceManagerFactory pmf =
-		// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -138,10 +127,8 @@ public class UserConcreateDao implements UserDao {
 			Query q = pm.newQuery(User.class);
 			q.declareParameters("String firstname");
 			q.setFilter("firstname == name");
-			users.add((User) q.execute(name));
-			// users = (List<User>) q.execute(name);
+			users = (List<User>) q.execute(name);
 			detached = (List<User>) pm.detachCopyAll(users);
-
 			tx.commit();
 		} finally {
 			if (tx.isActive()) {

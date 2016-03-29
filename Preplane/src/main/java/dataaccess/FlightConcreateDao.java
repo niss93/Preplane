@@ -14,12 +14,9 @@ import javax.print.FlavorException;
 
 import buisnessobject.Airport;
 import buisnessobject.Flight;
+import buisnessobject.User;
 
 public class FlightConcreateDao implements FlightDao, FlavorException {
-	// List<Flight> listOfFlights;
-	//
-	// private PersistenceManagerFactory pmf =
-	// JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
 	public FlightConcreateDao(PersistenceManagerFactory pmf) {
 		// this.pmf = pmf;
@@ -39,18 +36,19 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
+		List<Flight> flights = new ArrayList<Flight>();
+		List<Flight> detached = new ArrayList<Flight>();
+
 
 		try {
 			tx.begin();
 			Query q = pm.newQuery(Flight.class);
-			q.setFilter("1 == indice");
-			q.declareParameters("int indice");
-			// List<Flight> results = (List<Flight>) q.execute(1);
-			Flight res = (Flight) q.execute(1);
+			q.setFilter("1 == 1");
 			List<Flight> results = new ArrayList<Flight>();
-			results.add(res);
+			flights = (List<Flight>) q.execute(1);
+			detached = (List<Flight>) pm.detachCopyAll(flights);
 			tx.commit();
-			return results;
+			return detached;
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();

@@ -11,8 +11,7 @@ import parsers.DateParser;
 public class Principale {
 
 	public static void main(String[] args) {
-		System.out.println(DAO.getUserDao().checkLogin("atik", "12123").isTicket());
-
+		System.out.println(DAO.getFlightDao().getFlight());
 	}
 	
 
