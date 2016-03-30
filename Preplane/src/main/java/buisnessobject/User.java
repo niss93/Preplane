@@ -34,6 +34,7 @@ public class User {
 	@Persistent
 	private String email;
 
+	/*myCrew quel staff*/
 	public User(int id, String username, String name, String firstname, /*Crew myCrew,*/ CrewStatus crew, String password) {
 		this.id = id;
 		this.username = username;

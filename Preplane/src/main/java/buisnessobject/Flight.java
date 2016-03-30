@@ -31,6 +31,7 @@ public class Flight {
 		//
 	}
 
+	/* Crew un équipage */
 	public Flight(String ddate, String adate, String arrival, String departure, String commercial, String atc,
 			FlightStatus status, Crew crew, Plane plane) {
 		this.departureDate = ddate;

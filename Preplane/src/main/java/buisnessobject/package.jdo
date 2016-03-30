@@ -5,19 +5,10 @@
 <jdo>
     <package name="buisnessobject">
         <class
-              name="Plane">
-            <field
-                  name="id"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="planeModel"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="planeCapacity"
-                  persistence-modifier="persistent"/>
-        </class>
-        <class
               name="Crew">
+            <field
+                  name="crewName"
+                  persistence-modifier="persistent"/>
             <field
                   name="crewList"
                   persistence-modifier="persistent"/>
@@ -32,39 +23,12 @@
                   persistence-modifier="persistent"/>
         </class>
         <class
-              name="Airport">
-            <field
-                  name="id"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="country"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="city"
-                  persistence-modifier="persistent"/>
-        </class>
-        <class
-              name="User">
-            <field
-                  name="id"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="name"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="firstName"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="crewStatus"
-                  persistence-modifier="persistent"/>
-            <field
-                  name="password"
-                  persistence-modifier="persistent"/>
-        </class>
-        <class
               name="Flight">
             <field
                   name="departureDate"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="arrivalDate"
                   persistence-modifier="persistent"/>
             <field
                   name="departureAirport"
@@ -79,6 +43,9 @@
                   name="crew"
                   persistence-modifier="persistent"/>
             <field
+                  name="plane"
+                  persistence-modifier="persistent"/>
+            <field
                   name="atcNumber"
                   persistence-modifier="persistent"/>
             <field
@@ -87,8 +54,59 @@
             <field
                   name="Status"
                   persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="Airport">
             <field
-                  name="arrivalDate"
+                  name="codeOACI"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="country"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="city"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="Plane">
+            <field
+                  name="id"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="airport"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="planeModel"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="planeCapacity"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="User">
+            <field
+                  name="id"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="username"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="name"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="firstName"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="myCrew"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="crewStatus"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="password"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="email"
                   persistence-modifier="persistent"/>
         </class>
     </package>

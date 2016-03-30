@@ -2,8 +2,6 @@ package buisnessobject;
 
 import javax.jdo.annotations.PersistenceCapable;
 
-@PersistenceCapable
-
 public class Airport {
 	private String codeOACI;
     private String country;
