@@ -14,7 +14,6 @@ import javax.print.FlavorException;
 
 import buisnessobject.Airport;
 import buisnessobject.Flight;
-import buisnessobject.User;
 
 public class FlightConcreateDao implements FlightDao, FlavorException {
 

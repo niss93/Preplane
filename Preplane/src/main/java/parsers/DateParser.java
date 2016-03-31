@@ -4,8 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.eclipse.jetty.util.log.Log;
-
 public class DateParser {
 	public static Date StringToDate(String date) {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");

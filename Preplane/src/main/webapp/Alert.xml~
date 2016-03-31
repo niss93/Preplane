@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+ 
+ <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+ <property name="triggers">
+  <list>
+   <ref bean="alertSystemCronTrigger" />
+  </list>
+ </property>
+ </bean>
+ <bean id="alertSystemCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+  <property name="jobDetail" ref="EmailAlertJob" />
+  <!-- run every morning at 6 AM -->
+  <property name="cronExpression" value="0/5 * * * * ?" />
+ </bean>
+ 
+ <bean name="EmailAlert" class="org.springframework.scheduling.quartz.JobDetailBean">
+  <property name="jobClass" value="alertsystem.EmailAlert" />
+  <property name="jobDataAsMap">
+   <map>
+    <entry key="EmailService" value-ref="EmailService"></entry>
+   </map>
+  </property>
+ </bean>
+  
+ <bean id="EmailService" class="alertsystem.EmailService">
+  <property name="mailSender" ref="mailSender"></property>
+ </bean>
+  
+ <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+  <property name="defaultEncoding" value="UTF-8"/>
+  <property name="host" value="smtp.gmail.com" />
+  <property name="port" value="465" />
+  <property name="protocol" value="smtps" />
+  <property name="username" value="admin@gmail.com"/>
+  <property name="password" value="*****"/>
+  <property name="javaMailProperties">
+   <props>
+    <prop key="mail.smtps.auth">true</prop>
+    <prop key="mail.smtps.starttls.enable">true</prop>
+    <prop key="mail.smtps.debug">true</prop>
+   </props>
+  </property>
+ </bean>
+  
+</beans>
+

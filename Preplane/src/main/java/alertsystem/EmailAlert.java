@@ -27,7 +27,7 @@ public class EmailAlert extends QuartzJobBean {
 		for (User user : usersToAlert) {
 			try {
 				Email email = new Email();
-				email.setFrom("younes@lamghari.com");
+				email.setFrom("lamghari.younes@gmail.com");
 				email.setSubject("Alert System !");
 				email.setTo(user.getEmail());
 				email.setText("<h1>Dear " + user.getName() + ",I'm here to alert you that .. :-)</h1>");
@@ -43,7 +43,7 @@ public class EmailAlert extends QuartzJobBean {
 
 	private List<User> getUsersToAlert() {
 		List<User> users = new ArrayList<User>();
-		User user1 = new User("Younes", "aaa@gmail.com", new Date());
+		User user1 = new User("Younes", "lamghari.younes@gmail.com", new Date());
 		users.add(user1);
 		return users;
 	}
