@@ -1,9 +1,9 @@
 function sendFlight(){
   var dep = document.getElementById("departure").value
   var arriv = document.getElementById("arrival").value
-  var dh =  document.getElementById("dh").value
+  var departure_time =  document.getElementById("departure_time").value
   var ah =  document.getElementById("ah").value
-  var comno = document.getElementById("comno").value
+  var comno = document.getElementById("commercial_no").value
   var atc = document.getElementById("atc").value
   var crew = document.getElementById("crew").value
   var status = document.getElementById("status").value
@@ -11,8 +11,8 @@ function sendFlight(){
   $.ajax({
     url: "http://localhost:9090/ws/preplane/flight_a?departure="+dep+
     "&arrival="+arriv+
-    "&ddate="+dh+
-    "&comno="+comno+
+    "&ddate="+departure_time+
+    "&comno="+commercial_no+
     "&atc="+atc+
     "&status="+status+
     "&crew="+crew+

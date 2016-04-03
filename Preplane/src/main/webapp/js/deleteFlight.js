@@ -1,11 +1,11 @@
 function deleteFlight(){
 
-  var dep = document.getElementById("departure").value
-  var dh =  document.getElementById("dh").value
-  var comno = document.getElementById("comno").value
+  var departure = document.getElementById("departure").value
+  var departure_time =  document.getElementById("departure_time").value
+  var commercial_no = document.getElementById("commercial_no").value
  
   $.ajax({
-    url: "http://localhost:9090/ws/preplane/flight/+"+dh+"/"+dep+"/"+comno,
+    url: "http://localhost:9090/ws/preplane/flight/+"+departure_time+"/"+departure+"/"+commercial_no,
     Type : "GET"
   })
   .done(function( data ) {

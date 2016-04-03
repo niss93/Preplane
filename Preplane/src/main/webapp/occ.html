@@ -72,15 +72,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-
-            <a href="addFlight.html" type="button" class="btn btn-link">
-              Add flight <br/> <br/> <br/>
-            </a>
-            
-          </div>
-        </div>
+    
         <div class="row">
           <div class="col-md-12">
             <div class="row">
@@ -134,50 +126,50 @@
                 <div>
                 </thead>
                 <tbody id="listbody">
-                	<td>
+                	<td class="departure_time">
 		    		  TVF1234
 		    		</td>
-		    		<td>
+		    		<td class="commercial_no">
 		    		  TO12C
 		    		</td>
-		    		<td>
+		    		<td class="departure">
 		    		  Paris-Orly LFPO
 		   		 	</td>
-		    		<td>
+		    		<td  class="arrival"> 
 		     		 Oslo
 				    </td>
-				    <td>
+				    <td class="fligh_status">
 		    		  On time
 		   			 </td>
-		   			 <td>
+		   			 <td class="crew">
 		    		  StarCrew
 		   			 </td>
 		   			 <td>
-		   			 	 <button onclick="getNotification()">Delete	</button>
+		   			 	 <button type="button" onclick="deleteFlight()">Delete flight</button>
 		   			 </td>
                 </tbody>
                 
                  <tbody id="add_flight">
                 	<td>
-		    		   <input type="text" id="departure_time">
+		    		   <input type="text" class="departure_time">
 		    		</td>
 		    		<td>
-		    		   <input type="text" id="commercial_no">
+		    		   <input type="text" class="commercial_no">
 		    		</td>
 		    		<td>
-		    		   <input type="text" id="departure">
+		    		   <input type="text" class="departure">
 		   		 	</td>
 		    		<td>
-		     			<input type="text" id="arrival">
+		     			<input type="text" class="arrival">
 				    </td>
 				    <td>
-		    		   <input type="text" id="fligh_status">
+		    		   <input type="text" class="fligh_status">
 		   			 </td>
 		   			 <td>
-		    		   <input type="text" id="crew">
+		    		   <input type="text" class="crew">
 		   			 </td>
 		   			 <td>
-			   			 <button onclick="getNotification()">Add Flight</button>
+			   			 <button type="button" onclick="sendFlight()" method="post">Add flight</button>
     				</td>
                 </tbody>
                 
@@ -193,6 +185,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="getAllFlights.js"></script>
     <script src="getUser.js"></script>
+    <script src="deleteFlight.js"></script>
+    <script src="sendFlight.js"></script>
 
   </body>
   </html>
