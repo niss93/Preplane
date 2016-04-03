@@ -27,7 +27,7 @@
 <head>
   <title>OCC Page</title>
 
-<!-->  <link href="css/bootstrap.min.css" rel="stylesheet"> </-->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
@@ -105,7 +105,7 @@
             <table class="table">
               <thead>
                 <tr>
-                  <tr>
+               		<tr>
                     <th>
                       Departure time
                     </th>
@@ -126,7 +126,8 @@
                       Crew
                     </th>
                     <th>
-                      Delete
+                    </th>
+                    <th>
                     </th>
 
                   </tr>
@@ -152,7 +153,7 @@
 		    		  StarCrew
 		   			 </td>
 		   			 <td>
-		   			 	 <input type="checkbox">
+		   			 	 <button onclick="getNotification()">Delete	</button>
 		   			 </td>
                 </tbody>
                 
@@ -176,7 +177,7 @@
 		    		   <input type="text" id="crew">
 		   			 </td>
 		   			 <td>
-			   			 <button type="add" onclick="getNotification()">Add Flight</button>
+			   			 <button onclick="getNotification()">Add Flight</button>
     				</td>
                 </tbody>
                 
