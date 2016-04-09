@@ -136,4 +136,41 @@ public class FlightConcreateDao implements FlightDao, FlavorException {
 		DbSos.deleteFlight(dh, departure, comno);
 	}
 
+	public void updateFlight(String commercialNumber,String atcNumber ,String notamNumber ,String departureDate,String arrivalDate,String arrivalAirport,String departureAirport){
+		// TODO Auto-generated method stub
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+				
+				try
+				{
+				    tx.begin();
+
+				    Query q = pm.newQuery(Flight.class);
+					q.declareParameters("String numcom");
+					q.setFilter("commercialNumber == numcom");
+
+					Flight f = (Flight) q.execute(commercialNumber);
+			        f.setNotamNumber ( notamNumber ); 
+			        f.setAtcNumber ( atcNumber  ); 
+			        f.setDepartureAirport(departureAirport);
+			        f.setArrivalAirport(arrivalAirport);
+			        f.setDepartureDate(departureDate);
+			        f.setArrivalDate(arrivalDate);
+
+				    tx.commit();
+				}
+				finally
+				{
+				    if (tx.isActive())
+				    {
+				        tx.rollback();
+				    }
+				    pm.close();
+				}
+				
+			
+			}
+	
 }
+
