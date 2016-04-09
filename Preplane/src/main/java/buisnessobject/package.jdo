@@ -97,9 +97,6 @@
                   name="firstName"
                   persistence-modifier="persistent"/>
             <field
-                  name="myCrew"
-                  persistence-modifier="persistent"/>
-            <field
                   name="crewStatus"
                   persistence-modifier="persistent"/>
             <field
