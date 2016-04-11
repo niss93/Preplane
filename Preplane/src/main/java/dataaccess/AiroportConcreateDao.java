@@ -22,7 +22,26 @@ public class AiroportConcreateDao {
 		// this.pmf = pmf;
 	}
 	
-	
+	public void addAirport(Airport airport) {
+		// TODO Auto-generated method stub
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+		PersistenceManager pm = pmf.getPersistenceManager();		
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+
+			pm.makePersistent(airport);
+
+			tx.commit();
+		} finally {
+			if (tx.isActive()) {
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+	}
 	
 	
 
