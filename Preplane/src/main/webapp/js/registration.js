@@ -1,4 +1,4 @@
-function getRegistred(){
+ function getRegistred(){
   var user = document.getElementById("user").value
   var first = document.getElementById("first").value
   var last = document.getElementById("last").value
