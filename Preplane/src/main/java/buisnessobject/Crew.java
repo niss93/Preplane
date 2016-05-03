@@ -8,9 +8,14 @@ import javax.jdo.annotations.PersistenceCapable;
 public class Crew {
 
 	private String crewName;
+	private String crewName;
 	private List<User> crewList;
 	private Flight flight;
 	
+	public Crew(String name){
+		crewName = name;
+	}
+
 	public Crew(String name){
 		crewName = name;
 	}

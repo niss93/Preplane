@@ -27,5 +27,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/netbook/Téléchargements/org.datanucleus.ide.eclipse_4.0.0.release/datanucleus-eclipse-plugin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
